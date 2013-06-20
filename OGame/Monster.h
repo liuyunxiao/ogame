@@ -8,7 +8,13 @@
 
 #ifndef __OGame__Monster__
 #define __OGame__Monster__
+#include "Role.h"
 
-#include <iostream>
+class Monster: public Role
+{
+public:
+    Monster();
+    ~Monster();
+};
 
 #endif /* defined(__OGame__Monster__) */

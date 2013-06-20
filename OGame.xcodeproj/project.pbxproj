@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041A9D181772D92F008E8467 /* GObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D161772D92F008E8467 /* GObject.cpp */; };
+		041A9D1B1772E000008E8467 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D191772E000008E8467 /* Player.cpp */; };
+		041A9D1F1772E6D4008E8467 /* AnimationCtrl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D1D1772E6D4008E8467 /* AnimationCtrl.cpp */; };
+		041A9D221772E777008E8467 /* Role.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D201772E776008E8467 /* Role.cpp */; };
+		041A9D281772E81D008E8467 /* Monster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D261772E81B008E8467 /* Monster.cpp */; };
+		041A9D2B1772EE1B008E8467 /* EntityObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D291772EE1A008E8467 /* EntityObject.cpp */; };
+		041A9D2E1772EE83008E8467 /* ColliedObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D2C1772EE82008E8467 /* ColliedObject.cpp */; };
+		041A9D32177301F3008E8467 /* PhysicsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D30177301F3008E8467 /* PhysicsManager.cpp */; };
 		0496082817604F3C00FE626B /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0496082717604F3C00FE626B /* MainView.xib */; };
 		0496082B17604F9400FE626B /* MainView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0496082A17604F9400FE626B /* MainView.mm */; };
 		04960BA317605A6C00FE626B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04960BA217605A6C00FE626B /* AudioToolbox.framework */; };
@@ -156,6 +164,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041A9D161772D92F008E8467 /* GObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GObject.cpp; sourceTree = "<group>"; };
+		041A9D171772D92F008E8467 /* GObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GObject.h; sourceTree = "<group>"; };
+		041A9D191772E000008E8467 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		041A9D1A1772E000008E8467 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		041A9D1C1772E10B008E8467 /* Object_define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Object_define.h; sourceTree = "<group>"; };
+		041A9D1D1772E6D4008E8467 /* AnimationCtrl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationCtrl.cpp; sourceTree = "<group>"; };
+		041A9D1E1772E6D4008E8467 /* AnimationCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationCtrl.h; sourceTree = "<group>"; };
+		041A9D201772E776008E8467 /* Role.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Role.cpp; sourceTree = "<group>"; };
+		041A9D211772E776008E8467 /* Role.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Role.h; sourceTree = "<group>"; };
+		041A9D261772E81B008E8467 /* Monster.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Monster.cpp; sourceTree = "<group>"; };
+		041A9D271772E81B008E8467 /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
+		041A9D291772EE1A008E8467 /* EntityObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EntityObject.cpp; sourceTree = "<group>"; };
+		041A9D2A1772EE1B008E8467 /* EntityObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityObject.h; sourceTree = "<group>"; };
+		041A9D2C1772EE82008E8467 /* ColliedObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColliedObject.cpp; sourceTree = "<group>"; };
+		041A9D2D1772EE82008E8467 /* ColliedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColliedObject.h; sourceTree = "<group>"; };
+		041A9D2F1772F6DC008E8467 /* PhyFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhyFactory.h; sourceTree = "<group>"; };
+		041A9D30177301F3008E8467 /* PhysicsManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsManager.cpp; sourceTree = "<group>"; };
+		041A9D31177301F3008E8467 /* PhysicsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsManager.h; sourceTree = "<group>"; };
 		0496082717604F3C00FE626B /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainView.xib; path = Resources/MainView.xib; sourceTree = "<group>"; };
 		0496082917604F9300FE626B /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
 		0496082A17604F9400FE626B /* MainView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainView.mm; sourceTree = "<group>"; };
@@ -577,6 +603,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041A9D151772D8F5008E8467 /* game */ = {
+			isa = PBXGroup;
+			children = (
+				041A9D161772D92F008E8467 /* GObject.cpp */,
+				041A9D171772D92F008E8467 /* GObject.h */,
+				041A9D191772E000008E8467 /* Player.cpp */,
+				041A9D1A1772E000008E8467 /* Player.h */,
+				041A9D1C1772E10B008E8467 /* Object_define.h */,
+				041A9D1D1772E6D4008E8467 /* AnimationCtrl.cpp */,
+				041A9D1E1772E6D4008E8467 /* AnimationCtrl.h */,
+				041A9D201772E776008E8467 /* Role.cpp */,
+				041A9D211772E776008E8467 /* Role.h */,
+				041A9D261772E81B008E8467 /* Monster.cpp */,
+				041A9D271772E81B008E8467 /* Monster.h */,
+				041A9D291772EE1A008E8467 /* EntityObject.cpp */,
+				041A9D2A1772EE1B008E8467 /* EntityObject.h */,
+				041A9D2C1772EE82008E8467 /* ColliedObject.cpp */,
+				041A9D2D1772EE82008E8467 /* ColliedObject.h */,
+				041A9D2F1772F6DC008E8467 /* PhyFactory.h */,
+			);
+			name = game;
+			sourceTree = "<group>";
+		};
 		04982FA3175F00600065204E = {
 			isa = PBXGroup;
 			children = (
@@ -612,6 +661,7 @@
 		04982FBA175F00600065204E /* OGame */ = {
 			isa = PBXGroup;
 			children = (
+				041A9D151772D8F5008E8467 /* game */,
 				0498F53E1762D5BF00C3CC8A /* Bullet */,
 				04982FBE175F00600065204E /* InfoPlist.strings */,
 				04982FC1175F00600065204E /* main.mm */,
@@ -642,6 +692,8 @@
 				04982FCB175F00600065204E /* OgreStaticPluginLoader.h */,
 				0496082917604F9300FE626B /* MainView.h */,
 				0496082A17604F9400FE626B /* MainView.mm */,
+				041A9D30177301F3008E8467 /* PhysicsManager.cpp */,
+				041A9D31177301F3008E8467 /* PhysicsManager.h */,
 			);
 			name = "Basic Ogre Framework";
 			sourceTree = "<group>";
@@ -1438,6 +1490,14 @@
 				0498F6F81762D5C000C3CC8A /* btGeometryUtil.cpp in Sources */,
 				0498F6F91762D5C000C3CC8A /* btQuickprof.cpp in Sources */,
 				0498F6FA1762D5C000C3CC8A /* btSerializer.cpp in Sources */,
+				041A9D181772D92F008E8467 /* GObject.cpp in Sources */,
+				041A9D1B1772E000008E8467 /* Player.cpp in Sources */,
+				041A9D1F1772E6D4008E8467 /* AnimationCtrl.cpp in Sources */,
+				041A9D221772E777008E8467 /* Role.cpp in Sources */,
+				041A9D281772E81D008E8467 /* Monster.cpp in Sources */,
+				041A9D2B1772EE1B008E8467 /* EntityObject.cpp in Sources */,
+				041A9D2E1772EE83008E8467 /* ColliedObject.cpp in Sources */,
+				041A9D32177301F3008E8467 /* PhysicsManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

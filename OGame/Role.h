@@ -8,7 +8,15 @@
 
 #ifndef __OGame__Role__
 #define __OGame__Role__
+#include "GObject.h"
 
-#include <iostream>
+class Role: public GObject
+{
+public:
+    Role();
+    ~Role();
+    
+private:
+};
 
 #endif /* defined(__OGame__Role__) */

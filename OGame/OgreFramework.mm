@@ -1,14 +1,9 @@
 #include "OgreFramework.h"
+
 #include "macUtils.h"
-//#import "cocos2d.h"
-//#import "EAGLView.h"
-//#import "CCDirectorCaller.h"
-//#include "AppDelegate.h"
 #import "MainView.h"
 #import <QuartzCore/CAEAGLLayer.h>
-#include "btBulletDynamicsCommon.h"
-//#import "OGRender2View.h"
-using namespace Ogre;
+
 static btDiscreteDynamicsWorld* sDynamicsWorld=0;
 static btCollisionConfiguration* sCollisionConfig=0;
 static btCollisionDispatcher* sCollisionDispatcher=0;

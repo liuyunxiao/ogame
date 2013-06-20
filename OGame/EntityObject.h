@@ -8,7 +8,11 @@
 
 #ifndef __OGame__EntityObject__
 #define __OGame__EntityObject__
+#include "GObject.h"
 
-#include <iostream>
+class EntityObject: GObject
+{
+    
+};
 
 #endif /* defined(__OGame__EntityObject__) */

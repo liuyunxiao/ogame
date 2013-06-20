@@ -8,7 +8,18 @@
 
 #ifndef __OGame__Player__
 #define __OGame__Player__
+#include "Role.h"
+class btKinematicCharacterController;
 
-#include <iostream>
+class Player:public Role
+{
+public:
+    Player();
+    ~Player();
+    
+private:
+    
+    btKinematicCharacterController* mCharacterCtl;
+};
 
 #endif /* defined(__OGame__Player__) */

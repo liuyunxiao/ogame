@@ -3,19 +3,6 @@
 #ifndef OGRE_FRAMEWORK_H
 #define OGRE_FRAMEWORK_H
 
-//|||||||||||||||||||||||||||||||||||||||||||||||
-
-#include <OgreCamera.h>
-#include <OgreEntity.h>
-#include <OgreLogManager.h>
-#include <OgreOverlay.h>
-#include <OgreOverlayElement.h>
-#include <OgreOverlayManager.h>
-#include <OgreRoot.h>
-#include <OgreViewport.h>
-#include <OgreSceneManager.h>
-#include <OgreRenderWindow.h>
-#include <OgreConfigFile.h>
 
 #include <OISEvents.h>
 #include <OISInputManager.h>
@@ -140,17 +127,17 @@ private:
     
 	bool                        m_bShutDownOgre;
 	
-	Ogre::Vector3				m_TranslateVector;
-	Ogre::Real                  m_MoveSpeed; 
-	Ogre::Degree				m_RotateSpeed; 
+	Vector3				m_TranslateVector;
+	Real                  m_MoveSpeed; 
+	Degree				m_RotateSpeed; 
 	float                       m_MoveScale; 
-	Ogre::Degree				m_RotScale;
+	Degree				m_RotScale;
 #ifdef OGRE_STATIC_LIB
-    Ogre::StaticPluginLoader    m_StaticPluginLoader;
+    StaticPluginLoader    m_StaticPluginLoader;
 #endif
     
-    Ogre::AnimationState*       m_pAnim;
-    Ogre::AnimationState*       m_pAnimUp;
+    AnimationState*       m_pAnim;
+    AnimationState*       m_pAnimUp;
 };
 
 //|||||||||||||||||||||||||||||||||||||||||||||||

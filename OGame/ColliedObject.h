@@ -9,6 +9,10 @@
 #ifndef __OGame__ColliedObject__
 #define __OGame__ColliedObject__
 
-#include <iostream>
+#include "GObject.h"
+class ColliedObject: public GObject
+{
+    
+};
 
 #endif /* defined(__OGame__ColliedObject__) */
