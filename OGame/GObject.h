@@ -15,9 +15,11 @@ public:
     GObject();
     ~GObject();
     
+    
+    virtual void Init(SceneNode* node, Entity* ent = 0, btCollisionObject* collison = 0);
     virtual void Destroy();
     
-    virtual void Update();
+    virtual void Update(double delta){};
     virtual void UpdatePhyTransform(const btTransform& trans);
     
     btCollisionObject*  GetCollisionObj() const {return mCollisionObject;}
@@ -27,7 +29,6 @@ public:
     bool                IsColliedObj()  {return (mCollisionObject != 0);}
     bool                IsSceneNode()   {return (mSceneNode != 0);}
     bool                IsEntity()      {return (mEntity != 0);}
-    
 protected:
     Entity*             mEntity;
     SceneNode*          mSceneNode;

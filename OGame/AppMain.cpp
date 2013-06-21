@@ -11,12 +11,14 @@ AppMain::AppMain()
 AppMain::~AppMain()
 {
 #ifdef USE_RTSHADER_SYSTEM
-    mShaderGenerator->removeSceneManager(OgreFramework::getSingletonPtr()->m_pSceneMgr);
+    mShaderGenerator->removeSceneManager(OgreMgr::getSingletonPtr()->m_pSceneMgr);
     
     finalizeRTShaderSystem();
 #endif
     
-    delete OgreFramework::getSingletonPtr();
+    delete MapMgr::getSingletonPtr();
+    delete BulletMgr::getSingletonPtr();
+    delete OgreMgr::getSingletonPtr();
 }
 
 //|||||||||||||||||||||||||||||||||||||||||||||||
@@ -105,16 +107,27 @@ void AppMain::finalizeRTShaderSystem()
 
 void AppMain::start()
 {
-	new OgreFramework();
-	if(!g_OgreFramePtr->initOgre("AppMain v1.0", this, 0))
+	new OgreMgr();
+	if(!g_OgreFramePtr->Init("OGame"))
+    {
 		return;
+    }
+    
+    new BulletMgr();
+    if(!BulletMgr::getSingleton().Init())
+    {
+        OgreMgr::getSingletonPtr()->m_pLog->logMessage("bulletmgr init error");
+        return;
+    }
+    
+    
     
 	m_bShutdown = false;
     
-	OgreFramework::getSingletonPtr()->m_pLog->logMessage("app initialized!");
+	OgreMgr::getSingletonPtr()->m_pLog->logMessage("app initialized!");
 	
 #ifdef USE_RTSHADER_SYSTEM
-    initializeRTShaderSystem(OgreFramework::getSingletonPtr()->m_pSceneMgr);
+    initializeRTShaderSystem(OgreMgr::getSingletonPtr()->m_pSceneMgr);
     Ogre::MaterialPtr baseWhite = Ogre::MaterialManager::getSingleton().getByName("BaseWhite", Ogre::ResourceGroupManager::INTERNAL_RESOURCE_GROUP_NAME);				
     baseWhite->setLightingEnabled(false);
     mShaderGenerator->createShaderBasedTechnique(
@@ -142,102 +155,18 @@ void AppMain::start()
                                                                          baseWhiteNoLighting->getTechnique(1)->getPass(0)->getFragmentProgram()->getName());
 #endif
     
-	setupDemoScene();
-#if !((OGRE_PLATFORM == OGRE_PLATFORM_APPLE) && __LP64__)
-	runDemo();
-#endif
+    new ObjectMgr();
+    if(!ObjectMgr::getSingleton().Init())
+    {
+        OgreMgr::getSingletonPtr()->m_pLog->logMessage("objectmgr init error");
+        return;
+    }
+    
+    new MapMgr();
+    if(!MapMgr::getSingleton().Init())
+    {
+        OgreMgr::getSingletonPtr()->m_pLog->logMessage("mapmgr init error");
+        return;
+    }
+    MapMgr::getSingletonPtr()->EnterMap("ff");
 }
-
-//|||||||||||||||||||||||||||||||||||||||||||||||
-
-void AppMain::setupDemoScene()
-{
-	g_SceneMgrPtr->setSkyBox(true, "Examples/SpaceSkyBox");
-    
-	g_SceneMgrPtr->createLight("Light")->setPosition(75,75,75);
-    
-//	m_pCubeEntity = g_SceneMgrPtr->createEntity("Cube", "ogrehead.mesh");
-//	m_pCubeNode = g_SceneMgrPtr->getRootSceneNode()->createChildSceneNode("CubeNode");
-//	m_pCubeNode->attachObject(m_pCubeEntity);
-    
-    
-
-}
-
-//|||||||||||||||||||||||||||||||||||||||||||||||
-
-void AppMain::runDemo()
-{
-	OgreFramework::getSingletonPtr()->m_pLog->logMessage("Start main loop...");
-	
-	double timeSinceLastFrame = 0;
-	double startTime = 0;
-    
-    OgreFramework::getSingletonPtr()->m_pRenderWnd->resetStatistics();
-    
-#if (!defined(OGRE_IS_IOS)) && !((OGRE_PLATFORM == OGRE_PLATFORM_APPLE) && __LP64__)
-	while(!m_bShutdown && !OgreFramework::getSingletonPtr()->isOgreToBeShutDown()) 
-	{
-		if(OgreFramework::getSingletonPtr()->m_pRenderWnd->isClosed())m_bShutdown = true;
-        
-#if OGRE_PLATFORM == OGRE_PLATFORM_WIN32 || OGRE_PLATFORM == OGRE_PLATFORM_LINUX || OGRE_PLATFORM == OGRE_PLATFORM_APPLE
-		Ogre::WindowEventUtilities::messagePump();
-#endif	
-		if(OgreFramework::getSingletonPtr()->m_pRenderWnd->isActive())
-		{
-			startTime = OgreFramework::getSingletonPtr()->m_pTimer->getMillisecondsCPU();
-            
-#if !OGRE_IS_IOS
-			OgreFramework::getSingletonPtr()->m_pKeyboard->capture();
-#endif
-			OgreFramework::getSingletonPtr()->m_pMouse->capture();
-            
-			OgreFramework::getSingletonPtr()->updateOgre(timeSinceLastFrame);
-			OgreFramework::getSingletonPtr()->m_pRoot->renderOneFrame();
-            
-			timeSinceLastFrame = OgreFramework::getSingletonPtr()->m_pTimer->getMillisecondsCPU() - startTime;
-		}
-		else
-		{
-#if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
-            Sleep(1000);
-#else
-            sleep(1);
-#endif
-		}
-	}
-#endif
-    
-#if !defined(OGRE_IS_IOS)
-	OgreFramework::getSingletonPtr()->m_pLog->logMessage("Main loop quit");
-	OgreFramework::getSingletonPtr()->m_pLog->logMessage("Shutdown OGRE...");
-#endif
-}
-
-//|||||||||||||||||||||||||||||||||||||||||||||||
-
-bool AppMain::keyPressed(const OIS::KeyEvent &keyEventRef)
-{
-#if !defined(OGRE_IS_IOS)
-	OgreFramework::getSingletonPtr()->keyPressed(keyEventRef);
-	
-	if(OgreFramework::getSingletonPtr()->m_pKeyboard->isKeyDown(OIS::KC_F))
-	{
-        //do something
-	}
-#endif
-	return true;
-}
-
-//|||||||||||||||||||||||||||||||||||||||||||||||
-
-bool AppMain::keyReleased(const OIS::KeyEvent &keyEventRef)
-{
-#if !defined(OGRE_IS_IOS)
-	OgreFramework::getSingletonPtr()->keyReleased(keyEventRef);
-#endif
-
-	return true;
-}
-
-//|||||||||||||||||||||||||||||||||||||||||||||||

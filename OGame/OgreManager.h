@@ -4,13 +4,7 @@
 #define OGRE_FRAMEWORK_H
 
 
-#include <OISEvents.h>
-#include <OISInputManager.h>
-#include <OISKeyboard.h>
-#include <OISMouse.h>
 
-
-//#define OGRE_NO_VIEWPORT_ORIENTATIONMODE 0
 #ifdef OGRE_STATIC_LIB
 #  define OGRE_STATIC_GL
 #  if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
@@ -50,100 +44,59 @@
 #  include "OgreStaticPluginLoader.h"
 #endif
 
-#ifdef OGRE_IS_IOS
-#   include <OISMultiTouch.h>
-#endif
 
-#include <SdkTrays.h>
 
 //|||||||||||||||||||||||||||||||||||||||||||||||
 
-#ifdef OGRE_IS_IOS
-class OgreFramework : public Ogre::Singleton<OgreFramework>, OIS::KeyListener, OIS::MultiTouchListener, OgreBites::SdkTrayListener
-#else
-class OgreFramework : public Ogre::Singleton<OgreFramework>, OIS::KeyListener, OIS::MouseListener, OgreBites::SdkTrayListener
-#endif
+class OgreMgr : public Singleton<OgreMgr>
 {
 public:
-	OgreFramework();
-	~OgreFramework();
-    void windowResized(Ogre::RenderWindow* rw);
+	OgreMgr();
+	~OgreMgr();
     
-#ifdef OGRE_IS_IOS
-    bool initOgre(Ogre::String wndTitle, OIS::KeyListener *pKeyListener = 0, OIS::MultiTouchListener *pMouseListener = 0);
-#else
-	bool initOgre(Ogre::String wndTitle, OIS::KeyListener *pKeyListener = 0, OIS::MouseListener *pMouseListener = 0);
-#endif
-	void updateOgre(double timeSinceLastFrame);
-	void moveCamera();
-	void getInput();
+    bool Init(String wndTitle);
+	void Update(double timeSinceLastFrame);
     
 	bool isOgreToBeShutDown()const{return m_bShutDownOgre;}
-    
-	bool keyPressed(const OIS::KeyEvent &keyEventRef);
-	bool keyReleased(const OIS::KeyEvent &keyEventRef);
-    
-#ifdef OGRE_IS_IOS
-	bool touchMoved(const OIS::MultiTouchEvent &evt);
-	bool touchPressed(const OIS::MultiTouchEvent &evt); 
-	bool touchReleased(const OIS::MultiTouchEvent &evt);
-	bool touchCancelled(const OIS::MultiTouchEvent &evt);
-#else
-	bool mouseMoved(const OIS::MouseEvent &evt);
-	bool mousePressed(const OIS::MouseEvent &evt, OIS::MouseButtonID id); 
-	bool mouseReleased(const OIS::MouseEvent &evt, OIS::MouseButtonID id);
-#endif
-    
-    void transformInputState(OIS::MultiTouchState &state);
-	
     void shoutBox();
-	Ogre::Root*                 m_pRoot;
-	Ogre::SceneManager*			m_pSceneMgr;
-	Ogre::RenderWindow*			m_pRenderWnd;
-	Ogre::Camera*				m_pCamera;
-	Ogre::Viewport*				m_pViewport;
-	Ogre::Log*                  m_pLog;
-	Ogre::Timer*				m_pTimer;
-	
-	OIS::InputManager*			m_pInputMgr;
-	OIS::Keyboard*				m_pKeyboard;
-#ifdef OGRE_IS_IOS
-	OIS::MultiTouch*			m_pMouse;
-#else
-	OIS::Mouse*					m_pMouse;
-#endif
-
+	Root*                   m_pRoot;
+	SceneManager*			m_pSceneMgr;
+	RenderWindow*			m_pRenderWnd;
+	Camera*                 m_pCamera;
+	Viewport*				m_pViewport;
+	Log*                    m_pLog;
+	Timer*                  m_pTimer;
+    
 protected:
    // Added for Mac compatibility
-   Ogre::String                 m_ResourcePath;
+   String                   m_ResourcePath;
     
 private:
-	OgreFramework(const OgreFramework&);
-	OgreFramework& operator= (const OgreFramework&);
+	OgreMgr(const OgreMgr&);
+	OgreMgr& operator= (const OgreMgr&);
+
+    FrameEvent              m_FrameEvent;
+	int                     m_iNumScreenShots;
     
-	OgreBites::SdkTrayManager*  m_pTrayMgr;
-    Ogre::FrameEvent            m_FrameEvent;
-	int                         m_iNumScreenShots;
-    
-	bool                        m_bShutDownOgre;
+	bool                    m_bShutDownOgre;
 	
-	Vector3				m_TranslateVector;
-	Real                  m_MoveSpeed; 
-	Degree				m_RotateSpeed; 
-	float                       m_MoveScale; 
-	Degree				m_RotScale;
+	Vector3                 m_TranslateVector;
+	Real                    m_MoveSpeed; 
+	Degree                  m_RotateSpeed; 
+	float                   m_MoveScale; 
+	Degree                  m_RotScale;
 #ifdef OGRE_STATIC_LIB
-    StaticPluginLoader    m_StaticPluginLoader;
+    StaticPluginLoader      m_StaticPluginLoader;
 #endif
     
-    AnimationState*       m_pAnim;
-    AnimationState*       m_pAnimUp;
+    AnimationState*         m_pAnim;
+    AnimationState*         m_pAnimUp;
 };
 
 //|||||||||||||||||||||||||||||||||||||||||||||||
 
 #endif 
-#define g_SceneMgrPtr OgreFramework::getSingletonPtr()->m_pSceneMgr
-#define g_OgreFramePtr OgreFramework::getSingletonPtr()
+#define g_SceneMgrPtr OgreMgr::getSingletonPtr()->m_pSceneMgr
+#define g_OgreFramePtr OgreMgr::getSingletonPtr()
 
 //|||||||||||||||||||||||||||||||||||||||||||||||

@@ -165,19 +165,20 @@
 
 - (void)renderOneFrame:(id)sender
 {
-    if(!OgreFramework::getSingletonPtr()->isOgreToBeShutDown() &&
+    if(!OgreMgr::getSingletonPtr()->isOgreToBeShutDown() &&
        Ogre::Root::getSingletonPtr() && Ogre::Root::getSingleton().isInitialised())
     {
-		if(OgreFramework::getSingletonPtr()->m_pRenderWnd->isActive())
+		if(OgreMgr::getSingletonPtr()->m_pRenderWnd->isActive())
 		{
-			mStartTime = OgreFramework::getSingletonPtr()->m_pTimer->getMillisecondsCPU();
+			mStartTime = OgreMgr::getSingletonPtr()->m_pTimer->getMillisecondsCPU();
             
-			//OgreFramework::getSingletonPtr()->m_pMouse->capture();
+            double delta = mLastFrameTime * 0.001;
+            ObjectMgr::getSingletonPtr()->Update(delta);
+            BulletMgr::getSingletonPtr()->Update(delta);
+			OgreMgr::getSingletonPtr()->Update(delta);
+			OgreMgr::getSingletonPtr()->m_pRoot->renderOneFrame();
             
-			OgreFramework::getSingletonPtr()->updateOgre(mLastFrameTime);
-			OgreFramework::getSingletonPtr()->m_pRoot->renderOneFrame();
-            
-			mLastFrameTime = OgreFramework::getSingletonPtr()->m_pTimer->getMillisecondsCPU() - mStartTime;
+			mLastFrameTime = OgreMgr::getSingletonPtr()->m_pTimer->getMillisecondsCPU() - mStartTime;
 		}
     }
     else

@@ -9,6 +9,19 @@
 #ifndef __OGame__MapManager__
 #define __OGame__MapManager__
 
-#include <iostream>
+class MapMgr:public Singleton<MapMgr>
+{
+public:
+    MapMgr();
+    ~MapMgr();
+    
+    bool Init();
+    void Update(double delta);
+    
+    bool EnterMap(String name);
+private:
+    MapMgr(const MapMgr&);
+    MapMgr& operator= (const MapMgr&);
+};
 
 #endif /* defined(__OGame__MapManager__) */

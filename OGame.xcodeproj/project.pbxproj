@@ -12,9 +12,12 @@
 		041A9D1F1772E6D4008E8467 /* AnimationCtrl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D1D1772E6D4008E8467 /* AnimationCtrl.cpp */; };
 		041A9D221772E777008E8467 /* Role.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D201772E776008E8467 /* Role.cpp */; };
 		041A9D281772E81D008E8467 /* Monster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D261772E81B008E8467 /* Monster.cpp */; };
-		041A9D2B1772EE1B008E8467 /* EntityObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D291772EE1A008E8467 /* EntityObject.cpp */; };
-		041A9D2E1772EE83008E8467 /* ColliedObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D2C1772EE82008E8467 /* ColliedObject.cpp */; };
-		041A9D32177301F3008E8467 /* PhysicsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D30177301F3008E8467 /* PhysicsManager.cpp */; };
+		041A9D32177301F3008E8467 /* BulletManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D30177301F3008E8467 /* BulletManager.cpp */; };
+		0484C8921773EC070066C862 /* PlayerControlView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0484C8911773EC070066C862 /* PlayerControlView.mm */; };
+		0484C8941773EC3C0066C862 /* PlayerControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0484C8931773EC3C0066C862 /* PlayerControlView.xib */; };
+		0484C8981773F7990066C862 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0484C8971773F7990066C862 /* Default-568h@2x.png */; };
+		0484C89D17741ADA0066C862 /* MapManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0484C89B17741ADA0066C862 /* MapManager.cpp */; };
+		0484C8A2177425390066C862 /* ObjectManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0484C8A0177425390066C862 /* ObjectManager.cpp */; };
 		0496082817604F3C00FE626B /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0496082717604F3C00FE626B /* MainView.xib */; };
 		0496082B17604F9400FE626B /* MainView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0496082A17604F9400FE626B /* MainView.mm */; };
 		04960BA317605A6C00FE626B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04960BA217605A6C00FE626B /* AudioToolbox.framework */; };
@@ -28,7 +31,7 @@
 		04982FC0175F00600065204E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04982FBE175F00600065204E /* InfoPlist.strings */; };
 		04982FC2175F00600065204E /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 04982FC1175F00600065204E /* main.mm */; };
 		04982FC6175F00600065204E /* AppMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04982FC5175F00600065204E /* AppMain.cpp */; };
-		04982FC9175F00600065204E /* OgreFramework.mm in Sources */ = {isa = PBXBuildFile; fileRef = 04982FC8175F00600065204E /* OgreFramework.mm */; };
+		04982FC9175F00600065204E /* OgreManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 04982FC8175F00600065204E /* OgreManager.mm */; };
 		04983012175F00620065204E /* ogre.cfg in Resources */ = {isa = PBXBuildFile; fileRef = 04983011175F00620065204E /* ogre.cfg */; };
 		04983014175F00620065204E /* plugins.cfg in Resources */ = {isa = PBXBuildFile; fileRef = 04983013175F00620065204E /* plugins.cfg */; };
 		04983016175F00620065204E /* resources.cfg in Resources */ = {isa = PBXBuildFile; fileRef = 04983015175F00620065204E /* resources.cfg */; };
@@ -175,13 +178,17 @@
 		041A9D211772E776008E8467 /* Role.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Role.h; sourceTree = "<group>"; };
 		041A9D261772E81B008E8467 /* Monster.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Monster.cpp; sourceTree = "<group>"; };
 		041A9D271772E81B008E8467 /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
-		041A9D291772EE1A008E8467 /* EntityObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EntityObject.cpp; sourceTree = "<group>"; };
-		041A9D2A1772EE1B008E8467 /* EntityObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityObject.h; sourceTree = "<group>"; };
-		041A9D2C1772EE82008E8467 /* ColliedObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColliedObject.cpp; sourceTree = "<group>"; };
-		041A9D2D1772EE82008E8467 /* ColliedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColliedObject.h; sourceTree = "<group>"; };
-		041A9D2F1772F6DC008E8467 /* PhyFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhyFactory.h; sourceTree = "<group>"; };
-		041A9D30177301F3008E8467 /* PhysicsManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsManager.cpp; sourceTree = "<group>"; };
-		041A9D31177301F3008E8467 /* PhysicsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsManager.h; sourceTree = "<group>"; };
+		041A9D30177301F3008E8467 /* BulletManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BulletManager.cpp; sourceTree = "<group>"; };
+		041A9D31177301F3008E8467 /* BulletManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletManager.h; sourceTree = "<group>"; };
+		0484C8901773EC070066C862 /* PlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerControlView.h; sourceTree = "<group>"; };
+		0484C8911773EC070066C862 /* PlayerControlView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayerControlView.mm; sourceTree = "<group>"; };
+		0484C8931773EC3C0066C862 /* PlayerControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerControlView.xib; sourceTree = "<group>"; };
+		0484C8971773F7990066C862 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		0484C89A177415EC0066C862 /* PreHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreHeader.h; sourceTree = "<group>"; };
+		0484C89B17741ADA0066C862 /* MapManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapManager.cpp; sourceTree = "<group>"; };
+		0484C89C17741ADA0066C862 /* MapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapManager.h; sourceTree = "<group>"; };
+		0484C8A0177425390066C862 /* ObjectManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectManager.cpp; sourceTree = "<group>"; };
+		0484C8A1177425390066C862 /* ObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectManager.h; sourceTree = "<group>"; };
 		0496082717604F3C00FE626B /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainView.xib; path = Resources/MainView.xib; sourceTree = "<group>"; };
 		0496082917604F9300FE626B /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
 		0496082A17604F9400FE626B /* MainView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainView.mm; sourceTree = "<group>"; };
@@ -194,15 +201,15 @@
 		04982FB4175F00600065204E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		04982FB6175F00600065204E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		04982FB8175F00600065204E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		04982FBC175F00600065204E /* OGame-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OGame-Prefix.pch"; sourceTree = "<group>"; };
+		04982FBC175F00600065204E /* OGame-Prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OGame-Prefix.h"; sourceTree = "<group>"; };
 		04982FBD175F00600065204E /* OGame-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OGame-Info.plist"; sourceTree = "<group>"; };
 		04982FBF175F00600065204E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		04982FC1175F00600065204E /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		04982FC4175F00600065204E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04982FC5175F00600065204E /* AppMain.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AppMain.cpp; sourceTree = "<group>"; };
 		04982FC7175F00600065204E /* AppMain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMain.h; sourceTree = "<group>"; };
-		04982FC8175F00600065204E /* OgreFramework.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OgreFramework.mm; sourceTree = "<group>"; };
-		04982FCA175F00600065204E /* OgreFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OgreFramework.h; sourceTree = "<group>"; };
+		04982FC8175F00600065204E /* OgreManager.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OgreManager.mm; sourceTree = "<group>"; };
+		04982FCA175F00600065204E /* OgreManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OgreManager.h; sourceTree = "<group>"; };
 		04982FCB175F00600065204E /* OgreStaticPluginLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OgreStaticPluginLoader.h; sourceTree = "<group>"; };
 		04982FD0175F00620065204E /* Examples.material */ = {isa = PBXFileReference; lastKnownFileType = text; path = Examples.material; sourceTree = "<group>"; };
 		04982FD1175F00620065204E /* Ogre.material */ = {isa = PBXFileReference; lastKnownFileType = text; path = Ogre.material; sourceTree = "<group>"; };
@@ -606,6 +613,8 @@
 		041A9D151772D8F5008E8467 /* game */ = {
 			isa = PBXGroup;
 			children = (
+				0484C89F1774250A0066C862 /* Manger */,
+				0484C89E17741F250066C862 /* FSM */,
 				041A9D161772D92F008E8467 /* GObject.cpp */,
 				041A9D171772D92F008E8467 /* GObject.h */,
 				041A9D191772E000008E8467 /* Player.cpp */,
@@ -617,13 +626,37 @@
 				041A9D211772E776008E8467 /* Role.h */,
 				041A9D261772E81B008E8467 /* Monster.cpp */,
 				041A9D271772E81B008E8467 /* Monster.h */,
-				041A9D291772EE1A008E8467 /* EntityObject.cpp */,
-				041A9D2A1772EE1B008E8467 /* EntityObject.h */,
-				041A9D2C1772EE82008E8467 /* ColliedObject.cpp */,
-				041A9D2D1772EE82008E8467 /* ColliedObject.h */,
-				041A9D2F1772F6DC008E8467 /* PhyFactory.h */,
 			);
 			name = game;
+			sourceTree = "<group>";
+		};
+		0484C88F1773EBC40066C862 /* frame */ = {
+			isa = PBXGroup;
+			children = (
+				0484C8901773EC070066C862 /* PlayerControlView.h */,
+				0484C8911773EC070066C862 /* PlayerControlView.mm */,
+				0496082917604F9300FE626B /* MainView.h */,
+				0496082A17604F9400FE626B /* MainView.mm */,
+			);
+			name = frame;
+			sourceTree = "<group>";
+		};
+		0484C89E17741F250066C862 /* FSM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = FSM;
+			sourceTree = "<group>";
+		};
+		0484C89F1774250A0066C862 /* Manger */ = {
+			isa = PBXGroup;
+			children = (
+				0484C89B17741ADA0066C862 /* MapManager.cpp */,
+				0484C89C17741ADA0066C862 /* MapManager.h */,
+				0484C8A0177425390066C862 /* ObjectManager.cpp */,
+				0484C8A1177425390066C862 /* ObjectManager.h */,
+			);
+			name = Manger;
 			sourceTree = "<group>";
 		};
 		04982FA3175F00600065204E = {
@@ -661,11 +694,11 @@
 		04982FBA175F00600065204E /* OGame */ = {
 			isa = PBXGroup;
 			children = (
+				0484C88F1773EBC40066C862 /* frame */,
 				041A9D151772D8F5008E8467 /* game */,
 				0498F53E1762D5BF00C3CC8A /* Bullet */,
 				04982FBE175F00600065204E /* InfoPlist.strings */,
-				04982FC1175F00600065204E /* main.mm */,
-				04982FC3175F00600065204E /* Basic Ogre Framework */,
+				04982FC3175F00600065204E /* Basic Framework */,
 				04982FCC175F00620065204E /* Resources */,
 				04982FBB175F00600065204E /* Supporting Files */,
 			);
@@ -675,37 +708,39 @@
 		04982FBB175F00600065204E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				04982FBC175F00600065204E /* OGame-Prefix.pch */,
+				04982FBC175F00600065204E /* OGame-Prefix.h */,
 				04982FBD175F00600065204E /* OGame-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		04982FC3175F00600065204E /* Basic Ogre Framework */ = {
+		04982FC3175F00600065204E /* Basic Framework */ = {
 			isa = PBXGroup;
 			children = (
+				04982FC1175F00600065204E /* main.mm */,
 				04982FC4175F00600065204E /* AppDelegate.h */,
 				04982FC5175F00600065204E /* AppMain.cpp */,
 				04982FC7175F00600065204E /* AppMain.h */,
-				04982FC8175F00600065204E /* OgreFramework.mm */,
-				04982FCA175F00600065204E /* OgreFramework.h */,
+				04982FC8175F00600065204E /* OgreManager.mm */,
+				04982FCA175F00600065204E /* OgreManager.h */,
 				04982FCB175F00600065204E /* OgreStaticPluginLoader.h */,
-				0496082917604F9300FE626B /* MainView.h */,
-				0496082A17604F9400FE626B /* MainView.mm */,
-				041A9D30177301F3008E8467 /* PhysicsManager.cpp */,
-				041A9D31177301F3008E8467 /* PhysicsManager.h */,
+				041A9D30177301F3008E8467 /* BulletManager.cpp */,
+				041A9D31177301F3008E8467 /* BulletManager.h */,
+				0484C89A177415EC0066C862 /* PreHeader.h */,
 			);
-			name = "Basic Ogre Framework";
+			name = "Basic Framework";
 			sourceTree = "<group>";
 		};
 		04982FCC175F00620065204E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0484C8971773F7990066C862 /* Default-568h@2x.png */,
 				04983011175F00620065204E /* ogre.cfg */,
 				04983013175F00620065204E /* plugins.cfg */,
 				04983015175F00620065204E /* resources.cfg */,
 				04982FCD175F00620065204E /* media */,
 				0496082717604F3C00FE626B /* MainView.xib */,
+				0484C8931773EC3C0066C862 /* PlayerControlView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1338,6 +1373,8 @@
 				04C89FE81771A59D0051FB86 /* Examples.particle in Resources */,
 				04C89FE91771A59D0051FB86 /* smoke.particle in Resources */,
 				04C89FEB1771B1440051FB86 /* smoke.material in Resources */,
+				0484C8941773EC3C0066C862 /* PlayerControlView.xib in Resources */,
+				0484C8981773F7990066C862 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1366,7 +1403,7 @@
 			files = (
 				04982FC2175F00600065204E /* main.mm in Sources */,
 				04982FC6175F00600065204E /* AppMain.cpp in Sources */,
-				04982FC9175F00600065204E /* OgreFramework.mm in Sources */,
+				04982FC9175F00600065204E /* OgreManager.mm in Sources */,
 				0496082B17604F9400FE626B /* MainView.mm in Sources */,
 				0498F6811762D5BF00C3CC8A /* btAxisSweep3.cpp in Sources */,
 				0498F6821762D5BF00C3CC8A /* btBroadphaseProxy.cpp in Sources */,
@@ -1495,9 +1532,10 @@
 				041A9D1F1772E6D4008E8467 /* AnimationCtrl.cpp in Sources */,
 				041A9D221772E777008E8467 /* Role.cpp in Sources */,
 				041A9D281772E81D008E8467 /* Monster.cpp in Sources */,
-				041A9D2B1772EE1B008E8467 /* EntityObject.cpp in Sources */,
-				041A9D2E1772EE83008E8467 /* ColliedObject.cpp in Sources */,
-				041A9D32177301F3008E8467 /* PhysicsManager.cpp in Sources */,
+				041A9D32177301F3008E8467 /* BulletManager.cpp in Sources */,
+				0484C8921773EC070066C862 /* PlayerControlView.mm in Sources */,
+				0484C89D17741ADA0066C862 /* MapManager.cpp in Sources */,
+				0484C8A2177425390066C862 /* ObjectManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1600,8 +1638,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_PREFIX_HEADER = "OGame/OGame-Prefix.h";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE\"",
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE/RenderSystems/GLES2\"",
@@ -1611,27 +1651,18 @@
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OIS\"",
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE/Plugins/ParticleFX\"",
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/iOSDependencies/include\"",
-					"\"/Users/mac/Documents/test/OGame/OGame/libs/kazmath/include\"",
-					"\"$(PROJECT_NAME)/libs/cocos2dx/kazmath/include\"",
-					"\"$(PROJECT_NAME)/libs/cocos2dx\"",
-					"\"$(PROJECT_NAME)/libs/CocosDenshion/include\"",
 					"\"$(SDKROOT)/usr/include/libxml2\"",
-					"\"$(PROJECT_NAME)/libs/cocos2dx/include\"",
-					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/third_party/ios\"",
-					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/ios\"",
 					"\"$(PROJECT_NAME)/Bullet/src\"",
 					"\"$(PROJECT_NAME)/Bullet/src/LinearMath\"",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/OGame/libs/cocos2dx/platform/third_party/ios/libraries\"",
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/lib/debug\"",
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/iOSDependencies/lib\"",
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/iOSDependencies/lib/debug\"",
 				);
 				OTHER_CFLAGS = "-DOGRE_USE_GLES2=1";
 				OTHER_LDFLAGS = (
-					"-lOIS",
 					"-lOgreMainStatic",
 					"-lRenderSystem_GLES2Static",
 					"-lOgreRTShaderSystemStatic",
@@ -1658,8 +1689,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_PREFIX_HEADER = "OGame/OGame-Prefix.h";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE\"",
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE/RenderSystems/GLES2\"",
@@ -1669,27 +1702,18 @@
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OIS\"",
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE/Plugins/ParticleFX\"",
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/iOSDependencies/include\"",
-					"\"/Users/mac/Documents/test/OGame/OGame/libs/kazmath/include\"",
-					"\"$(PROJECT_NAME)/libs/cocos2dx/kazmath/include\"",
-					"\"$(PROJECT_NAME)/libs/cocos2dx\"",
-					"\"$(PROJECT_NAME)/libs/CocosDenshion/include\"",
 					"\"$(SDKROOT)/usr/include/libxml2\"",
-					"\"$(PROJECT_NAME)/libs/cocos2dx/include\"",
-					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/third_party/ios\"",
-					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/ios\"",
 					"\"$(PROJECT_NAME)/Bullet/src\"",
 					"\"$(PROJECT_NAME)/Bullet/src/LinearMath\"",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/OGame/libs/cocos2dx/platform/third_party/ios/libraries\"",
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/iOSDependencies/lib\"",
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/lib/release\"",
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/iOSDependencies/lib/release\"",
 				);
 				OTHER_CFLAGS = "-DOGRE_USE_GLES2=1";
 				OTHER_LDFLAGS = (
-					"-lOIS",
 					"-lOgreMainStatic",
 					"-lRenderSystem_GLES2Static",
 					"-lOgreRTShaderSystemStatic",

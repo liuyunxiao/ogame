@@ -1,5 +1,5 @@
 //
-//  PhysicsManager.h
+//  BulletManager.h
 //  OGame
 //
 //  Created by mac on 13-6-20.
@@ -8,29 +8,30 @@
 
 #ifndef __OGame__PhysicsManager__
 #define __OGame__PhysicsManager__
-#include "OgreSingleton.h"
-
-class PhysicsMgr:public Singleton<PhysicsMgr>
+class BulletMgr:public Singleton<BulletMgr>
 {
 public:
-    PhysicsMgr();
-    ~PhysicsMgr();
-    
-    static PhysicsMgr* getSingletonPtr();
-    static PhysicsMgr& getSingleton();
+    BulletMgr();
+    ~BulletMgr();
     
     bool Init();
-    void Update();
+    void Update(double delta);
     
     void CreateCharactor();
     
     btPairCachingGhostObject* CreateGhostObj();
 private:
+	BulletMgr(const BulletMgr&);
+	BulletMgr& operator= (const BulletMgr&);
+    
     btDiscreteDynamicsWorld*                mDynamicsWorld;
     btCollisionConfiguration*               mCollisionConfig;
     btCollisionDispatcher*                  mCollisionDispatcher;
     btSequentialImpulseConstraintSolver*    mConstraintSolver;
     btBroadphaseInterface*                  mBroadphase;
+    
+    btAlignedObjectArray<btCollisionShape*> mCollisionShapes;
+    btAlignedObjectArray<btRigidBody*>      mRigidBodys;
 };
 
 #endif /* defined(__OGame__PhysicsManager__) */

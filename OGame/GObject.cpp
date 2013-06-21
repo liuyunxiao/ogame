@@ -7,7 +7,7 @@
 //
 
 #include "GObject.h"
-#include "OgreFramework.h"
+#include "OgreManager.h"
 
 GObject::GObject():mSceneNode(0),mCollisionObject(0),mEntity(0)
 {
@@ -24,6 +24,13 @@ void GObject::Destroy()
     if(mSceneNode)
     {
     }
+}
+
+void GObject::Init(SceneNode* node, Entity* ent, btCollisionObject* collison)
+{
+    mSceneNode = node;
+    mEntity = ent;
+    mCollisionObject = collison;
 }
 
 void GObject::UpdatePhyTransform(const btTransform &trans)

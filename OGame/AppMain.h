@@ -1,11 +1,14 @@
 //|||||||||||||||||||||||||||||||||||||||||||||||
 
-#ifndef OGRE_DEMO_H
-#define OGRE_DEMO_H
+#ifndef OGRE_APPMAIN_H
+#define OGRE_APPMAIN_H
 
 //|||||||||||||||||||||||||||||||||||||||||||||||
 
-#include "OgreFramework.h"
+#include "OgreManager.h"
+#include "BulletManager.h"
+#include "MapManager.h"
+#include "ObjectManager.h"
 
 //|||||||||||||||||||||||||||||||||||||||||||||||
 
@@ -78,25 +81,19 @@ protected:
 };
 #endif
 
-class AppMain : public OIS::KeyListener
+class AppMain
 {
 public:
 	AppMain();
 	~AppMain();
     
 	void start();
-	
-	bool keyPressed(const OIS::KeyEvent &keyEventRef);
-	bool keyReleased(const OIS::KeyEvent &keyEventRef);
-    
 private:
-    void setupDemoScene();
-	void runDemo();
     bool initializeRTShaderSystem(Ogre::SceneManager* sceneMgr);
     void finalizeRTShaderSystem();
 
-	Ogre::SceneNode*			m_pCubeNode;
-	Ogre::Entity*				m_pCubeEntity;
+	SceneNode*			m_pCubeNode;
+	Entity*				m_pCubeEntity;
     
 	bool					m_bShutdown;
 #ifdef USE_RTSHADER_SYSTEM

@@ -21,7 +21,7 @@ AnimationCtrl::~AnimationCtrl()
 
 void AnimationCtrl::PlayAni(String name, EAniPartType partType, bool bLoop)
 {
-    assert(partType < 0 || partType >= eAPT_All);
+    //assert(partType < 0 || partType >= eAPT_All);
     AnimationState* ani = mEntity->getAnimationState(name);
     if(NULL == ani)
         return;

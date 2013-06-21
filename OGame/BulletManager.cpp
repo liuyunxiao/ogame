@@ -6,20 +6,11 @@
 //
 //
 
-#include "PhysicsManager.h"
+#include "BulletManager.h"
+#include "GObject.h"
 
-template<> PhysicsMgr* Singleton<PhysicsMgr>::msSingleton = 0;
-PhysicsMgr* PhysicsMgr::getSingletonPtr()
-{
-    return msSingleton;
-}
-
-PhysicsMgr& PhysicsMgr::getSingleton()
-{
-    return (*msSingleton);
-}
-
-PhysicsMgr::PhysicsMgr():
+template<> BulletMgr* Singleton<BulletMgr>::msSingleton = 0;
+BulletMgr::BulletMgr():
     mDynamicsWorld(0),
     mCollisionConfig(0),
     mCollisionDispatcher(0),
@@ -29,7 +20,7 @@ PhysicsMgr::PhysicsMgr():
     
 }
 
-PhysicsMgr::~PhysicsMgr()
+BulletMgr::~BulletMgr()
 {
     //delete dynamics world
 	delete mDynamicsWorld;
@@ -46,7 +37,7 @@ PhysicsMgr::~PhysicsMgr()
 	delete mCollisionConfig;
 }
 
-bool PhysicsMgr::Init()
+bool BulletMgr::Init()
 {
     mCollisionConfig = new btDefaultCollisionConfiguration();
 
@@ -62,14 +53,61 @@ bool PhysicsMgr::Init()
 	mDynamicsWorld = new btDiscreteDynamicsWorld(mCollisionDispatcher,mBroadphase,mConstraintSolver,mCollisionConfig);
     
 	mDynamicsWorld->setGravity(btVector3(0,-10,0));
+    
+    return true;
 }
 
-btPairCachingGhostObject* PhysicsMgr::CreateGhostObj()
+void BulletMgr::Update(double delta)
+{
+    if (mDynamicsWorld)
+	{
+		mDynamicsWorld->stepSimulation(delta, 2);//deltaTime);
+		{
+			static int i=0;
+			if (i<10)
+			{
+				i++;
+				//CProfileManager::dumpAll();
+			}
+		}
+	}
+    
+	for (int i=0;i<mRigidBodys.size();i++)
+	{
+        const btTransform& trans = mRigidBodys[i]->getCenterOfMassTransform();
+        
+        GObject* pObj = (GObject*)mRigidBodys[i]->getUserPointer();
+        if(pObj)
+            pObj->UpdatePhyTransform(trans);
+    }
+    
+    int nNumManifold = mDynamicsWorld->getDispatcher()->getNumManifolds();
+    for(int i = 0;i < nNumManifold; ++i)
+    {
+        btPersistentManifold* contactManifld = mDynamicsWorld->getDispatcher()->getManifoldByIndexInternal(i);
+        
+        int numContacts = contactManifld->getNumContacts();
+        for (int j = 0; j < numContacts; ++j)
+        {
+            btManifoldPoint& contactPoint = contactManifld->getContactPoint(j);
+        }
+        if(numContacts > 0)
+        {
+            btCollisionObject* obA = static_cast<btCollisionObject*>(contactManifld->getBody0());
+            btCollisionObject* obB = static_cast<btCollisionObject*>(contactManifld->getBody1());
+            
+            GObject* pObjA = (GObject*)obA->getUserPointer();
+            GObject* pObjB = (GObject*)obB->getUserPointer();
+        }
+    }
+}
+
+btPairCachingGhostObject* BulletMgr::CreateGhostObj()
 {
     return (new btPairCachingGhostObject());
 }
 
-void PhysicsMgr::CreateCharactor()
+void BulletMgr::CreateCharactor()
 {
     btTransform startTransform;
 	startTransform.setIdentity ();

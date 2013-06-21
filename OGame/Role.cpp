@@ -7,9 +7,9 @@
 //
 
 #include "Role.h"
+#include "AnimationCtrl.h"
 
-
-Role::Role()
+Role::Role():mAniCtrl(0)
 {
     
 }
@@ -17,4 +17,12 @@ Role::Role()
 Role::~Role()
 {
     
+}
+
+void Role::Update(double delta)
+{
+    GObject::Update(delta);
+    
+    if(mAniCtrl)
+        mAniCtrl->UpdateAnis(delta);
 }

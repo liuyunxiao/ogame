@@ -9,6 +9,12 @@
 #ifndef OGame_PreHeader_h
 #define OGame_PreHeader_h
 
+#include "btBulletDynamicsCommon.h"
+#include "btBulletCollisionCommon.h"
+#include "btGhostObject.h"
 
+
+#include "Ogre.h"
+using namespace Ogre;
 
 #endif

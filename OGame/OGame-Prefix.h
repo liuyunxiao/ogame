@@ -7,10 +7,4 @@
     #import <Foundation/Foundation.h>
 #endif
 
-#include "Ogre.h"
-using namespace Ogre;
-
-#include "btBulletDynamicsCommon.h"
-#include "btBulletCollisionCommon.h"
-
-#include "btGhostObject.h"
+#include "PreHeader.h"

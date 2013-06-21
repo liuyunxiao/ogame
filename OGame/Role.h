@@ -10,13 +10,17 @@
 #define __OGame__Role__
 #include "GObject.h"
 
+class AnimationCtrl;
+
 class Role: public GObject
 {
 public:
     Role();
     ~Role();
     
-private:
+    virtual void Update(double delta);
+//protected:
+    AnimationCtrl*      mAniCtrl;
 };
 
 #endif /* defined(__OGame__Role__) */

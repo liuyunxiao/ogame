@@ -16,10 +16,7 @@ class Player:public Role
 public:
     Player();
     ~Player();
-    
 private:
-    
     btKinematicCharacterController* mCharacterCtl;
 };
-
 #endif /* defined(__OGame__Player__) */
