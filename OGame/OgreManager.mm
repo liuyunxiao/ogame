@@ -114,7 +114,10 @@ bool OgreMgr::Init(String wndTitle)
     items = [[NSBundle mainBundle] loadNibNamed:@"PlayerControlView" owner:nil options:nil];
     
     PlayerControlView* subView = (PlayerControlView*)[items objectAtIndex:0];
-    [v addSubview:subView];
+    subView.userInteractionEnabled = YES;
+    [pView addSubview:subView];
+    
+    [pView bringSubviewToFront:subView];
     
     m_pSceneMgr->setSkyBoxEnabled(true);
     
@@ -242,5 +245,4 @@ void OgreMgr::Update(double timeSinceLastFrame)
 	m_RotScale  = m_RotateSpeed * (float)timeSinceLastFrame;
     
 	m_FrameEvent.timeSinceLastFrame = timeSinceLastFrame;
-    printf("%f\n", timeSinceLastFrame);
 }

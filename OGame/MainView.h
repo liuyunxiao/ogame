@@ -10,9 +10,6 @@
 
 @interface MainView : UIView
 {
-    IBOutlet   UIButton*    btnTest;
-    
-    BOOL        bBtnTestDown;
 }
 
 @end

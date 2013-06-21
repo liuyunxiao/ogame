@@ -10,17 +10,9 @@
 #include "OgreManager.h"
 @implementation MainView
 
--(IBAction)testDown:(id)sender
+-(IBAction)testCicked:(id)sender
 {
     g_OgreFramePtr->shoutBox();
-    //g_OgreFramePtr->m_pCamera->pitch(Ogre::Radian(0.01));
-    //bBtnTestDown = YES;
-}
-
--(IBAction)testUp:(id)sender
-{
-    //bBtnTestDown = NO;
-    //g_OgreFramePtr->m_pCamera->pitch(Ogre::Radian(0.01));
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

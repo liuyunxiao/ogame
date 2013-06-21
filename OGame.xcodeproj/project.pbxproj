@@ -1638,10 +1638,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREFIX_HEADER = "OGame/OGame-Prefix.h";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE\"",
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE/RenderSystems/GLES2\"",
@@ -1689,10 +1689,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREFIX_HEADER = "OGame/OGame-Prefix.h";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE\"",
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE/RenderSystems/GLES2\"",

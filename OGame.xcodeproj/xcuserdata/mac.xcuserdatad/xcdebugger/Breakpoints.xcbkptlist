@@ -7,13 +7,13 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "OGame/AnimationCtrl.cpp"
-         timestampString = "393498537.80346"
+         filePath = "OGame/PlayerControlView.mm"
+         timestampString = "393501323.84143"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "39"
-         endingLineNumber = "39"
-         landmarkName = "AnimationCtrl::UpdateAnis(double delta)"
+         startingLineNumber = "16"
+         endingLineNumber = "16"
+         landmarkName = "-testClicked:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

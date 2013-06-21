@@ -28,6 +28,7 @@ void AnimationCtrl::PlayAni(String name, EAniPartType partType, bool bLoop)
     
     mAniParts[partType] = ani;
     mAniParts[partType]->setLoop(bLoop);
+    mAniParts[partType]->setEnabled(true);
 }
 
 void AnimationCtrl::UpdateAnis(double delta)

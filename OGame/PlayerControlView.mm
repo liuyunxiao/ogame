@@ -10,16 +10,8 @@
 
 @implementation PlayerControlView
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
 
--(IBAction)upClicked:(id)sender
+-(IBAction)testClicked:(id)sender
 {
     
 }
