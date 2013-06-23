@@ -19,6 +19,7 @@ public:
     ~Role();
     
     virtual void Update(double delta);
+    virtual void SetDirtion(Vector2 dir);
 //protected:
     AnimationCtrl*      mAniCtrl;
 };

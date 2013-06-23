@@ -22,15 +22,8 @@
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    g_OgreFramePtr->m_pCamera->yaw(Ogre::Radian(0.1));
+    //g_OgreFramePtr->m_pCamera->yaw(Ogre::Radian(0.1));
 }
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    
-}
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    
-}
+
 
 @end

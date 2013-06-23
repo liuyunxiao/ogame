@@ -53,7 +53,7 @@ bool MapMgr::EnterMap(String name)
     Entity* mBodyEnt = g_SceneMgrPtr->createEntity("SinbadBody", "Sinbad.mesh");
     mBodyNode->attachObject(mBodyEnt);
 
-    mBodyNode->attachObject(g_SceneMgrPtr->createParticleSystem("smoke", "Examples/Smoke"));
+    //mBodyNode->attachObject(g_SceneMgrPtr->createParticleSystem("smoke", "Examples/Smoke"));
     
     Entity* mSword1 = g_SceneMgrPtr->createEntity("SinbadSword1", "Sword.mesh");
     Entity* mSword2 = g_SceneMgrPtr->createEntity("SinbadSword2", "Sword.mesh");

@@ -14,7 +14,6 @@
 		041A9D281772E81D008E8467 /* Monster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D261772E81B008E8467 /* Monster.cpp */; };
 		041A9D32177301F3008E8467 /* BulletManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D30177301F3008E8467 /* BulletManager.cpp */; };
 		0484C8921773EC070066C862 /* PlayerControlView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0484C8911773EC070066C862 /* PlayerControlView.mm */; };
-		0484C8941773EC3C0066C862 /* PlayerControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0484C8931773EC3C0066C862 /* PlayerControlView.xib */; };
 		0484C8981773F7990066C862 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0484C8971773F7990066C862 /* Default-568h@2x.png */; };
 		0484C89D17741ADA0066C862 /* MapManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0484C89B17741ADA0066C862 /* MapManager.cpp */; };
 		0484C8A2177425390066C862 /* ObjectManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0484C8A0177425390066C862 /* ObjectManager.cpp */; };
@@ -164,6 +163,12 @@
 		04C89FE81771A59D0051FB86 /* Examples.particle in Resources */ = {isa = PBXBuildFile; fileRef = 04C89FE41771A59D0051FB86 /* Examples.particle */; };
 		04C89FE91771A59D0051FB86 /* smoke.particle in Resources */ = {isa = PBXBuildFile; fileRef = 04C89FE51771A59D0051FB86 /* smoke.particle */; };
 		04C89FEB1771B1440051FB86 /* smoke.material in Resources */ = {isa = PBXBuildFile; fileRef = 04C89FEA1771B1440051FB86 /* smoke.material */; };
+		493C299D17770012004DB81D /* btn_archor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 493C299C17770012004DB81D /* btn_archor@2x.png */; };
+		493C29A017770327004DB81D /* bg_archor_circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 493C299F17770327004DB81D /* bg_archor_circle@2x.png */; };
+		49A405F817760CF500418A68 /* UIDirButton.mm in Sources */ = {isa = PBXBuildFile; fileRef = 49A405F717760CF500418A68 /* UIDirButton.mm */; };
+		49A406061776202600418A68 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A406041776202600418A68 /* MainView.xib */; };
+		49A406071776202600418A68 /* PlayerControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A406051776202600418A68 /* PlayerControlView.xib */; };
+		49A4060A177620FF00418A68 /* spotlight_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A40609177620FF00418A68 /* spotlight_image.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -182,7 +187,6 @@
 		041A9D31177301F3008E8467 /* BulletManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletManager.h; sourceTree = "<group>"; };
 		0484C8901773EC070066C862 /* PlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerControlView.h; sourceTree = "<group>"; };
 		0484C8911773EC070066C862 /* PlayerControlView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayerControlView.mm; sourceTree = "<group>"; };
-		0484C8931773EC3C0066C862 /* PlayerControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerControlView.xib; sourceTree = "<group>"; };
 		0484C8971773F7990066C862 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		0484C89A177415EC0066C862 /* PreHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreHeader.h; sourceTree = "<group>"; };
 		0484C89B17741ADA0066C862 /* MapManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapManager.cpp; sourceTree = "<group>"; };
@@ -589,6 +593,13 @@
 		04C89FE41771A59D0051FB86 /* Examples.particle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Examples.particle; sourceTree = "<group>"; };
 		04C89FE51771A59D0051FB86 /* smoke.particle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = smoke.particle; sourceTree = "<group>"; };
 		04C89FEA1771B1440051FB86 /* smoke.material */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = smoke.material; sourceTree = "<group>"; };
+		493C299C17770012004DB81D /* btn_archor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_archor@2x.png"; sourceTree = "<group>"; };
+		493C299F17770327004DB81D /* bg_archor_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_archor_circle@2x.png"; sourceTree = "<group>"; };
+		49A405F617760CF500418A68 /* UIDirButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDirButton.h; sourceTree = "<group>"; };
+		49A405F717760CF500418A68 /* UIDirButton.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UIDirButton.mm; sourceTree = "<group>"; };
+		49A406041776202600418A68 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		49A406051776202600418A68 /* PlayerControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerControlView.xib; sourceTree = "<group>"; };
+		49A40609177620FF00418A68 /* spotlight_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spotlight_image.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -630,15 +641,17 @@
 			name = game;
 			sourceTree = "<group>";
 		};
-		0484C88F1773EBC40066C862 /* frame */ = {
+		0484C88F1773EBC40066C862 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
 				0484C8901773EC070066C862 /* PlayerControlView.h */,
 				0484C8911773EC070066C862 /* PlayerControlView.mm */,
 				0496082917604F9300FE626B /* MainView.h */,
 				0496082A17604F9400FE626B /* MainView.mm */,
+				49A405F617760CF500418A68 /* UIDirButton.h */,
+				49A405F717760CF500418A68 /* UIDirButton.mm */,
 			);
-			name = frame;
+			name = UIView;
 			sourceTree = "<group>";
 		};
 		0484C89E17741F250066C862 /* FSM */ = {
@@ -694,7 +707,7 @@
 		04982FBA175F00600065204E /* OGame */ = {
 			isa = PBXGroup;
 			children = (
-				0484C88F1773EBC40066C862 /* frame */,
+				0484C88F1773EBC40066C862 /* UIView */,
 				041A9D151772D8F5008E8467 /* game */,
 				0498F53E1762D5BF00C3CC8A /* Bullet */,
 				04982FBE175F00600065204E /* InfoPlist.strings */,
@@ -734,13 +747,13 @@
 		04982FCC175F00620065204E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				49A406031776202600418A68 /* Resources */,
 				0484C8971773F7990066C862 /* Default-568h@2x.png */,
 				04983011175F00620065204E /* ogre.cfg */,
+				0496082717604F3C00FE626B /* MainView.xib */,
 				04983013175F00620065204E /* plugins.cfg */,
 				04983015175F00620065204E /* resources.cfg */,
 				04982FCD175F00620065204E /* media */,
-				0496082717604F3C00FE626B /* MainView.xib */,
-				0484C8931773EC3C0066C862 /* PlayerControlView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1310,6 +1323,26 @@
 			path = particle;
 			sourceTree = "<group>";
 		};
+		49A406031776202600418A68 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				49A40608177620FF00418A68 /* tex */,
+				49A406041776202600418A68 /* MainView.xib */,
+				49A406051776202600418A68 /* PlayerControlView.xib */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		49A40608177620FF00418A68 /* tex */ = {
+			isa = PBXGroup;
+			children = (
+				493C299F17770327004DB81D /* bg_archor_circle@2x.png */,
+				493C299C17770012004DB81D /* btn_archor@2x.png */,
+				49A40609177620FF00418A68 /* spotlight_image.png */,
+			);
+			path = tex;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1373,8 +1406,12 @@
 				04C89FE81771A59D0051FB86 /* Examples.particle in Resources */,
 				04C89FE91771A59D0051FB86 /* smoke.particle in Resources */,
 				04C89FEB1771B1440051FB86 /* smoke.material in Resources */,
-				0484C8941773EC3C0066C862 /* PlayerControlView.xib in Resources */,
 				0484C8981773F7990066C862 /* Default-568h@2x.png in Resources */,
+				49A406061776202600418A68 /* MainView.xib in Resources */,
+				49A406071776202600418A68 /* PlayerControlView.xib in Resources */,
+				49A4060A177620FF00418A68 /* spotlight_image.png in Resources */,
+				493C299D17770012004DB81D /* btn_archor@2x.png in Resources */,
+				493C29A017770327004DB81D /* bg_archor_circle@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1536,6 +1573,7 @@
 				0484C8921773EC070066C862 /* PlayerControlView.mm in Sources */,
 				0484C89D17741ADA0066C862 /* MapManager.cpp in Sources */,
 				0484C8A2177425390066C862 /* ObjectManager.cpp in Sources */,
+				49A405F817760CF500418A68 /* UIDirButton.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1654,19 +1692,29 @@
 					"\"$(SDKROOT)/usr/include/libxml2\"",
 					"\"$(PROJECT_NAME)/Bullet/src\"",
 					"\"$(PROJECT_NAME)/Bullet/src/LinearMath\"",
+					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OGRE\"",
+					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OGRE/RenderSystems/GLES2\"",
+					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OGRE/RTShaderSystem\"",
+					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OGRE/iOS\"",
+					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include\"",
+					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OIS\"",
+					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OGRE/Plugins/ParticleFX\"",
+					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/iOSDependencies/include\"",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/lib/debug\"",
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/iOSDependencies/lib\"",
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/iOSDependencies/lib/debug\"",
+					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/lib/debug\"",
+					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/iOSDependencies/lib\"",
+					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/iOSDependencies/lib/debug\"",
 				);
 				OTHER_CFLAGS = "-DOGRE_USE_GLES2=1";
 				OTHER_LDFLAGS = (
 					"-lOgreMainStatic",
 					"-lRenderSystem_GLES2Static",
 					"-lOgreRTShaderSystemStatic",
-					"-lmesaglsl2",
 					"-lboost_system",
 					"-lboost_chrono",
 					"-lboost_date_time",
@@ -1705,19 +1753,29 @@
 					"\"$(SDKROOT)/usr/include/libxml2\"",
 					"\"$(PROJECT_NAME)/Bullet/src\"",
 					"\"$(PROJECT_NAME)/Bullet/src/LinearMath\"",
+					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OGRE\"",
+					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OGRE/RenderSystems/GLES2\"",
+					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OGRE/RTShaderSystem\"",
+					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OGRE/iOS\"",
+					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include\"",
+					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OIS\"",
+					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OGRE/Plugins/ParticleFX\"",
+					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/iOSDependencies/include\"",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/iOSDependencies/lib\"",
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/lib/release\"",
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/iOSDependencies/lib/release\"",
+					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/iOSDependencies/lib\"",
+					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/lib/release\"",
+					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/iOSDependencies/lib/release\"",
 				);
 				OTHER_CFLAGS = "-DOGRE_USE_GLES2=1";
 				OTHER_LDFLAGS = (
 					"-lOgreMainStatic",
 					"-lRenderSystem_GLES2Static",
 					"-lOgreRTShaderSystemStatic",
-					"-lmesaglsl2",
 					"-lboost_system",
 					"-lboost_chrono",
 					"-lboost_date_time",
