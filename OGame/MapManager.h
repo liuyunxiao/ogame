@@ -19,6 +19,8 @@ public:
     void Update(double delta);
     
     bool EnterMap(String name);
+    
+    void ShoutMonster();
 private:
     MapMgr(const MapMgr&);
     MapMgr& operator= (const MapMgr&);

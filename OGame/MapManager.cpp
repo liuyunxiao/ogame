@@ -124,8 +124,8 @@ bool MapMgr::EnterMap(String name)
     player->InitControl(pCharactorCtrl);
     //todo
     player->mAniCtrl = new AnimationCtrl(mBodyEnt);
-    player->mAniCtrl->PlayAni("RunBase", eAPT_Base);
-    player->mAniCtrl->PlayAni("RunTop", eAPT_Top);
+    //player->mAniCtrl->PlayAni("RunBase", eAPT_Base);
+    //player->mAniCtrl->PlayAni("RunTop", eAPT_Top);
     
     
 
@@ -165,4 +165,51 @@ bool MapMgr::EnterMap(String name)
         
         BulletMgr::getSingletonPtr()->AddRigidBody(boxBody);
     }
+}
+
+void MapMgr::ShoutMonster()
+{
+    static int shoutnum = 0;
+    String name = "sbox";
+    
+    Vector3 caPos = OgreMgr::getSingletonPtr()->m_pCamera->getPosition();
+    caPos.z -= 3;
+    
+    Vector3 caOr = OgreMgr::getSingletonPtr()->m_pCamera->getDirection();
+    
+    String namenum = name + StringConverter::toString(++shoutnum);
+    Entity* boxEnt = g_SceneMgrPtr->createEntity(namenum, SceneManager::PT_CUBE);
+    Ogre::SceneNode* boxNode = g_SceneMgrPtr->getRootSceneNode()->createChildSceneNode(caPos);
+    
+    boxEnt->setMaterialName("Examples/Box");
+    boxNode->attachObject(boxEnt);
+    boxNode->scale(Ogre::Vector3(0.01, 0.01, 0.01));
+    
+    btTransform bodyTransform;
+    bodyTransform.setIdentity();
+    bodyTransform.setOrigin(btVector3(caPos.x,caPos.y,caPos.z));
+    btCollisionShape* boxShape = new btBoxShape(btVector3(0.5,0.5,0.5));
+    btScalar mass(1.);//positive mass means dynamic/moving  object
+    bool isDynamic = (mass != 0.f);
+    btVector3 localInertia(0,0,0);
+    if (isDynamic)
+        boxShape->calculateLocalInertia(mass,localInertia);
+    //using motionstate is recommended, it provides interpolation capabilities, and only synchronizes 'active' objects
+    btDefaultMotionState* myMotionState = new btDefaultMotionState(bodyTransform);
+    btRigidBody::btRigidBodyConstructionInfo rbInfo(mass,myMotionState,boxShape,localInertia);
+    btRigidBody* boxBody=new btRigidBody(rbInfo);
+
+    
+    //most applications shouldn't disable deactivation, but for this demo it is better.
+    boxBody->setActivationState(DISABLE_DEACTIVATION);
+    //add the body to the dynamics world
+    BulletMgr::getSingletonPtr()->AddRigidBody(boxBody);
+    //boxBody->setLinearVelocity(btVector3(0, 0, 3));
+    
+    Monster* pMonster = new Monster();
+    pMonster->Init(boxNode, boxEnt, boxBody);
+    ObjectMgr::getSingletonPtr()->AddMonster(pMonster);
+    
+    boxBody->setLinearVelocity(btVector3(caOr.x * 20, caOr.y * 20, caOr.z * 20));
+    //boxBody->applyCentralForce(btVector3(caOr.x * 100, caOr.y * 100, caOr.z * 100));
 }

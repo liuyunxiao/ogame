@@ -10,6 +10,7 @@
 
 @interface MainView : UIView
 {
+    IBOutlet UILabel* texFps;
 }
 
 @end
