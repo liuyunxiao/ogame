@@ -7,9 +7,9 @@
 //
 
 #include "AnimationCtrl.h"
+#include "Role.h"
 
-
-AnimationCtrl::AnimationCtrl(Entity* ent):mEntity(ent)
+AnimationCtrl::AnimationCtrl(Role* role):mOwner(role)
 {
     bzero(mAniParts, sizeof(mAniParts));
 }
@@ -21,8 +21,12 @@ AnimationCtrl::~AnimationCtrl()
 
 void AnimationCtrl::PlayAni(String name, EAniPartType partType, bool bLoop)
 {
-    //assert(partType < 0 || partType >= eAPT_All);
-    AnimationState* ani = mEntity->getAnimationState(name);
+    if(!mOwner->GetEntity())
+    {
+        return;
+    }
+    
+    AnimationState* ani = mOwner->GetEntity()->getAnimationState(name);
     if(NULL == ani)
         return;
     

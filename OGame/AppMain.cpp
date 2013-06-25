@@ -108,7 +108,7 @@ void AppMain::finalizeRTShaderSystem()
 void AppMain::start()
 {
 	new OgreMgr();
-	if(!g_OgreFramePtr->Init("OGame"))
+	if(!g_pOgreFramePtr->Init("OGame"))
     {
 		return;
     }

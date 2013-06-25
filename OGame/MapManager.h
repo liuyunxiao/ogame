@@ -25,5 +25,5 @@ private:
     MapMgr(const MapMgr&);
     MapMgr& operator= (const MapMgr&);
 };
-
+#define g_pMapMgr MapMgr::getSingletonPtr()
 #endif /* defined(__OGame__MapManager__) */

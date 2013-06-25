@@ -23,6 +23,7 @@ bool Player::InitControl(btKinematicCharacterController* pCharacter)
 {
     mCharacterCtl = pCharacter;
 }
+
 void Player::SetRun(bool bRun)
 {
     mbRun = bRun;

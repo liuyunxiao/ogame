@@ -58,7 +58,6 @@ public:
 	void Update(double timeSinceLastFrame);
     
 	bool isOgreToBeShutDown()const{return m_bShutDownOgre;}
-    void shoutBox();
 	Root*                   m_pRoot;
 	SceneManager*			m_pSceneMgr;
 	RenderWindow*			m_pRenderWnd;
@@ -88,15 +87,11 @@ private:
 #ifdef OGRE_STATIC_LIB
     StaticPluginLoader      m_StaticPluginLoader;
 #endif
-    
-    AnimationState*         m_pAnim;
-    AnimationState*         m_pAnimUp;
 };
 
 //|||||||||||||||||||||||||||||||||||||||||||||||
 
 #endif 
-#define g_SceneMgrPtr OgreMgr::getSingletonPtr()->m_pSceneMgr
-#define g_OgreFramePtr OgreMgr::getSingletonPtr()
-
+#define g_pSceneMgrPtr OgreMgr::getSingletonPtr()->m_pSceneMgr
+#define g_pOgreFramePtr OgreMgr::getSingletonPtr()
 //|||||||||||||||||||||||||||||||||||||||||||||||

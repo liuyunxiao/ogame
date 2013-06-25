@@ -9,18 +9,18 @@
 #ifndef __OGame__AnimationCtrl__
 #define __OGame__AnimationCtrl__
 #include "Object_define.h"
-
+class Role;
 class AnimationCtrl
 {
 public:
-    AnimationCtrl(Entity* ent);
+    AnimationCtrl(Role* role);
     ~AnimationCtrl();
     
     void PlayAni(String name, EAniPartType partType, bool bLoop = true);
     void UpdateAnis(double delta);
     
 private:
-    Entity*         mEntity;
+    Role*           mOwner;
     AnimationState* mAniParts[eAPT_All];
 };
 #endif /* defined(__OGame__AnimationCtrl__) */

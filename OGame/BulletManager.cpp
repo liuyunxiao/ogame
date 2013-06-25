@@ -15,13 +15,40 @@ BulletMgr::BulletMgr():
     mCollisionConfig(0),
     mCollisionDispatcher(0),
     mConstraintSolver(0),
-    mBroadphase(0)
+    mBroadphase(0),
+    mpGhostObject(0)
 {
     
 }
 
 BulletMgr::~BulletMgr()
 {
+    //cleanup in the reverse order of creation/initialization
+	if (mpGhostObject)
+	{
+		mDynamicsWorld->removeCollisionObject(mpGhostObject);
+	}
+	//remove the rigidbodies from the dynamics world and delete them
+	int i;
+	for (i=mDynamicsWorld->getNumCollisionObjects()-1; i>=0 ;i--)
+	{
+		btCollisionObject* obj = mDynamicsWorld->getCollisionObjectArray()[i];
+		btRigidBody* body = btRigidBody::upcast(obj);
+		if (body && body->getMotionState())
+		{
+			delete body->getMotionState();
+		}
+		mDynamicsWorld->removeCollisionObject( obj );
+		delete obj;
+	}
+    
+	//delete collision shapes
+	for (int j=0;j<mCollisionShapes.size();j++)
+	{
+		btCollisionShape* shape = mCollisionShapes[j];
+		delete shape;
+	}
+    
     //delete dynamics world
 	delete mDynamicsWorld;
     
@@ -40,7 +67,6 @@ BulletMgr::~BulletMgr()
 bool BulletMgr::Init()
 {
     mCollisionConfig = new btDefaultCollisionConfiguration();
-
 	mBroadphase = new btDbvtBroadphase();
     
     btVector3 worldMin(-1000,-1000,-1000);
@@ -108,8 +134,17 @@ void BulletMgr::AddRigidBody(btRigidBody* pBody)
 {
     if(NULL == pBody)
         return;
+    
     mDynamicsWorld->addRigidBody(pBody);
     mRigidBodys.push_back(pBody);
+}
+
+void BulletMgr::AddCollisionShape(btCollisionShape* pShape)
+{
+    if(NULL == pShape)
+        return;
+    
+    mCollisionShapes.push_back(pShape);
 }
 
 

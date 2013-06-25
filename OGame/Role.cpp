@@ -11,12 +11,12 @@
 
 Role::Role():mAniCtrl(0)
 {
-    
+    mAniCtrl = new AnimationCtrl(this);
 }
 
 Role::~Role()
 {
-    
+    delete mAniCtrl;
 }
 
 void Role::Update(double delta)

@@ -15,8 +15,6 @@
 
 -(IBAction)testCicked:(id)sender
 {
-    //g_OgreFramePtr->shoutBox();
-    
     Player* pPlayer = ObjectMgr::getSingletonPtr()->GetPlayer();
     if(!pPlayer)
         return;
@@ -31,17 +29,4 @@
 
     texFps.text = [NSString stringWithFormat:@"%f", fps];
 }
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    
-}
-
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
-     
-    //g_OgreFramePtr->m_pCamera->yaw(Ogre::Radian(0.1));
-}
-
-
 @end

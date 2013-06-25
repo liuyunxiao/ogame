@@ -689,6 +689,10 @@
 				0484C89C17741ADA0066C862 /* MapManager.h */,
 				0484C8A0177425390066C862 /* ObjectManager.cpp */,
 				0484C8A1177425390066C862 /* ObjectManager.h */,
+				04982FC8175F00600065204E /* OgreManager.mm */,
+				04982FCA175F00600065204E /* OgreManager.h */,
+				041A9D30177301F3008E8467 /* BulletManager.cpp */,
+				041A9D31177301F3008E8467 /* BulletManager.h */,
 			);
 			name = Manger;
 			sourceTree = "<group>";
@@ -756,11 +760,7 @@
 				04982FC4175F00600065204E /* AppDelegate.h */,
 				04982FC5175F00600065204E /* AppMain.cpp */,
 				04982FC7175F00600065204E /* AppMain.h */,
-				04982FC8175F00600065204E /* OgreManager.mm */,
-				04982FCA175F00600065204E /* OgreManager.h */,
 				04982FCB175F00600065204E /* OgreStaticPluginLoader.h */,
-				041A9D30177301F3008E8467 /* BulletManager.cpp */,
-				041A9D31177301F3008E8467 /* BulletManager.h */,
 				0484C89A177415EC0066C862 /* PreHeader.h */,
 			);
 			name = "Basic Framework";

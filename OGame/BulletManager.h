@@ -18,6 +18,8 @@ public:
     void Update(double delta);
     
     void AddRigidBody(btRigidBody* pBody);
+    void AddCollisionShape(btCollisionShape* pShape);
+    void SetGhostObject(btGhostObject* pGhostObject){mpGhostObject = pGhostObject;}
     
     btDiscreteDynamicsWorld* GetWord()const {return mDynamicsWorld;}
 private:
@@ -32,6 +34,8 @@ private:
     
     btAlignedObjectArray<btCollisionShape*> mCollisionShapes;
     btAlignedObjectArray<btRigidBody*>      mRigidBodys;
+    
+    btGhostObject*                          mpGhostObject;//player
 };
-
+#define g_pBulletMgr BulletMgr::getSingletonPtr()
 #endif /* defined(__OGame__PhysicsManager__) */

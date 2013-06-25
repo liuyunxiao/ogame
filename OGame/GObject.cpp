@@ -7,7 +7,6 @@
 //
 
 #include "GObject.h"
-#include "OgreManager.h"
 
 GObject::GObject():mSceneNode(0),mCollisionObject(0),mEntity(0)
 {

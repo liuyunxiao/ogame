@@ -28,8 +28,8 @@ private:
     ObjectMgr& operator= (const ObjectMgr&);
     
     Player*             mPlayer;
-    
     std::vector<Monster*>      mMonsters;
 };
 
+#define g_pObjectMgr ObjectMgr::getSingletonPtr()
 #endif /* defined(__OGame__ObjectManager__) */

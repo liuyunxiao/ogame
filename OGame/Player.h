@@ -18,9 +18,13 @@ public:
     ~Player();
     
     virtual void Update(double delta);
+    
+    bool InitControl(btKinematicCharacterController* pCharacter);
+    //test
     void SetRun(bool bRun);
     void Jump();
-    bool InitControl(btKinematicCharacterController* pCharacter);
+    
+    
 private:
     btKinematicCharacterController* mCharacterCtl;
     bool mbRun;

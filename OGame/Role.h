@@ -20,7 +20,7 @@ public:
     
     virtual void Update(double delta);
     virtual void SetDirtion(Vector2 dir);
-//protected:
+protected:
     AnimationCtrl*      mAniCtrl;
 };
 
