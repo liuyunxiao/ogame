@@ -163,6 +163,9 @@
 		04C89FE81771A59D0051FB86 /* Examples.particle in Resources */ = {isa = PBXBuildFile; fileRef = 04C89FE41771A59D0051FB86 /* Examples.particle */; };
 		04C89FE91771A59D0051FB86 /* smoke.particle in Resources */ = {isa = PBXBuildFile; fileRef = 04C89FE51771A59D0051FB86 /* smoke.particle */; };
 		04C89FEB1771B1440051FB86 /* smoke.material in Resources */ = {isa = PBXBuildFile; fileRef = 04C89FEA1771B1440051FB86 /* smoke.material */; };
+		04E1F1F01777D94A009F4143 /* MINILZO.C in Sources */ = {isa = PBXBuildFile; fileRef = 04E1F1E61777D94A009F4143 /* MINILZO.C */; };
+		04E1F1F11777D94A009F4143 /* ClientNet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04E1F1E91777D94A009F4143 /* ClientNet.cpp */; };
+		04E1F1F21777D94A009F4143 /* globe_table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04E1F1EC1777D94A009F4143 /* globe_table.cpp */; };
 		493C299D17770012004DB81D /* btn_archor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 493C299C17770012004DB81D /* btn_archor@2x.png */; };
 		493C29A017770327004DB81D /* bg_archor_circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 493C299F17770327004DB81D /* bg_archor_circle@2x.png */; };
 		49A405F817760CF500418A68 /* UIDirButton.mm in Sources */ = {isa = PBXBuildFile; fileRef = 49A405F717760CF500418A68 /* UIDirButton.mm */; };
@@ -593,6 +596,19 @@
 		04C89FE41771A59D0051FB86 /* Examples.particle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Examples.particle; sourceTree = "<group>"; };
 		04C89FE51771A59D0051FB86 /* smoke.particle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = smoke.particle; sourceTree = "<group>"; };
 		04C89FEA1771B1440051FB86 /* smoke.material */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = smoke.material; sourceTree = "<group>"; };
+		04E1F1DC1777D94A009F4143 /* filter_define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = filter_define.h; sourceTree = "<group>"; };
+		04E1F1DD1777D94A009F4143 /* login_msg_define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = login_msg_define.h; sourceTree = "<group>"; };
+		04E1F1DE1777D94A009F4143 /* net_define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = net_define.h; sourceTree = "<group>"; };
+		04E1F1DF1777D94A009F4143 /* type_define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = type_define.h; sourceTree = "<group>"; };
+		04E1F1E41777D94A009F4143 /* LZOCONF.H */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LZOCONF.H; sourceTree = "<group>"; };
+		04E1F1E51777D94A009F4143 /* lzodefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lzodefs.h; sourceTree = "<group>"; };
+		04E1F1E61777D94A009F4143 /* MINILZO.C */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MINILZO.C; sourceTree = "<group>"; };
+		04E1F1E71777D94A009F4143 /* MINILZO.H */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MINILZO.H; sourceTree = "<group>"; };
+		04E1F1E91777D94A009F4143 /* ClientNet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClientNet.cpp; sourceTree = "<group>"; };
+		04E1F1EA1777D94A009F4143 /* ClientNet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientNet.h; sourceTree = "<group>"; };
+		04E1F1EC1777D94A009F4143 /* globe_table.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = globe_table.cpp; sourceTree = "<group>"; };
+		04E1F1ED1777D94A009F4143 /* globe_table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = globe_table.h; sourceTree = "<group>"; };
+		04E1F1EE1777D94A009F4143 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 		493C299C17770012004DB81D /* btn_archor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_archor@2x.png"; sourceTree = "<group>"; };
 		493C299F17770327004DB81D /* bg_archor_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_archor_circle@2x.png"; sourceTree = "<group>"; };
 		49A405F617760CF500418A68 /* UIDirButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDirButton.h; sourceTree = "<group>"; };
@@ -707,6 +723,7 @@
 		04982FBA175F00600065204E /* OGame */ = {
 			isa = PBXGroup;
 			children = (
+				04E1F1DA1777D94A009F4143 /* core */,
 				0484C88F1773EBC40066C862 /* UIView */,
 				041A9D151772D8F5008E8467 /* game */,
 				0498F53E1762D5BF00C3CC8A /* Bullet */,
@@ -1323,6 +1340,58 @@
 			path = particle;
 			sourceTree = "<group>";
 		};
+		04E1F1DA1777D94A009F4143 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				04E1F1DB1777D94A009F4143 /* define */,
+				04E1F1E31777D94A009F4143 /* minilzo */,
+				04E1F1E81777D94A009F4143 /* network */,
+				04E1F1EB1777D94A009F4143 /* util */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		04E1F1DB1777D94A009F4143 /* define */ = {
+			isa = PBXGroup;
+			children = (
+				04E1F1DC1777D94A009F4143 /* filter_define.h */,
+				04E1F1DD1777D94A009F4143 /* login_msg_define.h */,
+				04E1F1DE1777D94A009F4143 /* net_define.h */,
+				04E1F1DF1777D94A009F4143 /* type_define.h */,
+			);
+			path = define;
+			sourceTree = "<group>";
+		};
+		04E1F1E31777D94A009F4143 /* minilzo */ = {
+			isa = PBXGroup;
+			children = (
+				04E1F1E41777D94A009F4143 /* LZOCONF.H */,
+				04E1F1E51777D94A009F4143 /* lzodefs.h */,
+				04E1F1E61777D94A009F4143 /* MINILZO.C */,
+				04E1F1E71777D94A009F4143 /* MINILZO.H */,
+			);
+			path = minilzo;
+			sourceTree = "<group>";
+		};
+		04E1F1E81777D94A009F4143 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				04E1F1E91777D94A009F4143 /* ClientNet.cpp */,
+				04E1F1EA1777D94A009F4143 /* ClientNet.h */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		04E1F1EB1777D94A009F4143 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				04E1F1EC1777D94A009F4143 /* globe_table.cpp */,
+				04E1F1ED1777D94A009F4143 /* globe_table.h */,
+				04E1F1EE1777D94A009F4143 /* util.h */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
 		49A406031776202600418A68 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1574,6 +1643,9 @@
 				0484C89D17741ADA0066C862 /* MapManager.cpp in Sources */,
 				0484C8A2177425390066C862 /* ObjectManager.cpp in Sources */,
 				49A405F817760CF500418A68 /* UIDirButton.mm in Sources */,
+				04E1F1F01777D94A009F4143 /* MINILZO.C in Sources */,
+				04E1F1F11777D94A009F4143 /* ClientNet.cpp in Sources */,
+				04E1F1F21777D94A009F4143 /* globe_table.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

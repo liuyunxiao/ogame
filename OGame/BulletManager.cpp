@@ -52,6 +52,8 @@ bool BulletMgr::Init()
 	mConstraintSolver = new btSequentialImpulseConstraintSolver;
 	mDynamicsWorld = new btDiscreteDynamicsWorld(mCollisionDispatcher,mBroadphase,mConstraintSolver,mCollisionConfig);
     
+    sweepBP->getOverlappingPairCache()->setInternalGhostPairCallback(new btGhostPairCallback());
+    mDynamicsWorld->getDispatchInfo().m_allowedCcdPenetration=0.0001f;
 	mDynamicsWorld->setGravity(btVector3(0,-10,0));
     
     return true;
@@ -81,51 +83,33 @@ void BulletMgr::Update(double delta)
             pObj->UpdatePhyTransform(trans);
     }
     
-    int nNumManifold = mDynamicsWorld->getDispatcher()->getNumManifolds();
-    for(int i = 0;i < nNumManifold; ++i)
-    {
-        btPersistentManifold* contactManifld = mDynamicsWorld->getDispatcher()->getManifoldByIndexInternal(i);
-        
-        int numContacts = contactManifld->getNumContacts();
-        for (int j = 0; j < numContacts; ++j)
-        {
-            btManifoldPoint& contactPoint = contactManifld->getContactPoint(j);
-        }
-        if(numContacts > 0)
-        {
-            btCollisionObject* obA = static_cast<btCollisionObject*>(contactManifld->getBody0());
-            btCollisionObject* obB = static_cast<btCollisionObject*>(contactManifld->getBody1());
-            
-            GObject* pObjA = (GObject*)obA->getUserPointer();
-            GObject* pObjB = (GObject*)obB->getUserPointer();
-        }
-    }
+//    int nNumManifold = mDynamicsWorld->getDispatcher()->getNumManifolds();
+//    for(int i = 0;i < nNumManifold; ++i)
+//    {
+//        btPersistentManifold* contactManifld = mDynamicsWorld->getDispatcher()->getManifoldByIndexInternal(i);
+//        
+//        int numContacts = contactManifld->getNumContacts();
+//        for (int j = 0; j < numContacts; ++j)
+//        {
+//            btManifoldPoint& contactPoint = contactManifld->getContactPoint(j);
+//        }
+//        if(numContacts > 0)
+//        {
+//            btCollisionObject* obA = static_cast<btCollisionObject*>(contactManifld->getBody0());
+//            btCollisionObject* obB = static_cast<btCollisionObject*>(contactManifld->getBody1());
+//            
+//            GObject* pObjA = (GObject*)obA->getUserPointer();
+//            GObject* pObjB = (GObject*)obB->getUserPointer();
+//        }
+//    }
 }
 
-btPairCachingGhostObject* BulletMgr::CreateGhostObj()
+void BulletMgr::AddRigidBody(btRigidBody* pBody)
 {
-    return (new btPairCachingGhostObject());
+    if(NULL == pBody)
+        return;
+    mDynamicsWorld->addRigidBody(pBody);
+    mRigidBodys.push_back(pBody);
 }
 
-void BulletMgr::CreateCharactor()
-{
-    btTransform startTransform;
-	startTransform.setIdentity ();
-	startTransform.setOrigin (btVector3(0.0, 0.0, 0.0));
-    
-//	mCollisionObject = new btPairCachingGhostObject();
-//	mCollisionObject->setWorldTransform(startTransform);
-//    
-//	sweepBP->getOverlappingPairCache()->setInternalGhostPairCallback(new btGhostPairCallback());
-//	btScalar characterHeight=1.75;
-//	btScalar characterWidth =1.75;
-//	btConvexShape* capsule = new btCapsuleShape(characterWidth,characterHeight);
-//	m_ghostObject->setCollisionShape (capsule);
-//	m_ghostObject->setCollisionFlags (btCollisionObject::CF_CHARACTER_OBJECT);
-//    
-//	btScalar stepHeight = btScalar(0.35);
-//	m_character = new btKinematicCharacterController (m_ghostObject,capsule,stepHeight);
-//    
-//    mCollisionObject = new btPairCachingGhostObject();
-}
 

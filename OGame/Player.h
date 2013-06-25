@@ -16,6 +16,9 @@ class Player:public Role
 public:
     Player();
     ~Player();
+    
+    virtual void Update(double delta);
+    bool InitControl(btKinematicCharacterController* pCharacter);
 private:
     btKinematicCharacterController* mCharacterCtl;
 };

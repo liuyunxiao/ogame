@@ -31,6 +31,8 @@ void GObject::Init(SceneNode* node, Entity* ent, btCollisionObject* collison)
     mSceneNode = node;
     mEntity = ent;
     mCollisionObject = collison;
+    if(mCollisionObject)
+        mCollisionObject->setUserPointer((void*)this);
 }
 
 void GObject::UpdatePhyTransform(const btTransform &trans)

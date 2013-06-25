@@ -10,7 +10,7 @@
 #define __OGame__ObjectManager__
 
 class Player;
-
+class Monster;
 class ObjectMgr:public Singleton<ObjectMgr>
 {
 public:
@@ -21,11 +21,15 @@ public:
     void Update(double delta);
     
     Player* GetPlayer() const;
+    
+    void AddMonster(Monster* pMonster);
 private:
     ObjectMgr(const ObjectMgr&);
     ObjectMgr& operator= (const ObjectMgr&);
     
     Player*             mPlayer;
+    
+    std::vector<Monster*>      mMonsters;
 };
 
 #endif /* defined(__OGame__ObjectManager__) */

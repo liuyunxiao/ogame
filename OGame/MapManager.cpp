@@ -13,7 +13,7 @@
 #include "ObjectManager.h"
 #include "Player.h"
 #include "AnimationCtrl.h"
-
+#include "Monster.h"
 template<> MapMgr* Singleton<MapMgr>::msSingleton = 0;
 MapMgr::MapMgr()
 {
@@ -49,6 +49,28 @@ bool MapMgr::EnterMap(String name)
     SceneNode* floorNode = g_SceneMgrPtr->getRootSceneNode()->createChildSceneNode(Vector3(0.0, 0.0, 0.0));
     floorNode->attachObject(floor);
     
+    btTransform groundTransform;
+    groundTransform.setIdentity();
+    groundTransform.setOrigin(btVector3(0,0,0));
+    
+    btVector3 norm(0,1,0);
+    btCollisionShape* groundShape = new btStaticPlaneShape(norm,0.0);
+    btScalar mass(0.);	//rigidbody is dynamic if and only if mass is non zero, otherwise static
+    bool isDynamic = (mass != 0.f);
+    btVector3 localInertia(0,0,0);
+    if (isDynamic)
+        groundShape->calculateLocalInertia(mass,localInertia);
+    //using motionstate is recommended, it provides interpolation capabilities, and only synchronizes 'active' objects
+    btDefaultMotionState* myMotionState = new btDefaultMotionState(groundTransform);
+    btRigidBody::btRigidBodyConstructionInfo rbInfo(mass,myMotionState,groundShape,localInertia);
+    btRigidBody* sFloorPlaneBody = new btRigidBody(rbInfo);
+    
+    Monster* pFloorMonster = new Monster();
+    pFloorMonster->Init(floorNode, floor, sFloorPlaneBody);
+    //add the body to the dynamics world
+    BulletMgr::getSingletonPtr()->AddRigidBody(sFloorPlaneBody);
+    
+    
     SceneNode* mBodyNode = g_SceneMgrPtr->getRootSceneNode()->createChildSceneNode(Vector3::UNIT_Y * 5);
     Entity* mBodyEnt = g_SceneMgrPtr->createEntity("SinbadBody", "Sinbad.mesh");
     mBodyNode->attachObject(mBodyEnt);
@@ -60,11 +82,75 @@ bool MapMgr::EnterMap(String name)
     mBodyEnt->attachObjectToBone("Handle.L", mSword1);
     mBodyEnt->attachObjectToBone("Handle.R", mSword2);
     
-    Player* player = ObjectMgr::getSingletonPtr()->GetPlayer();
-    player->Init(mBodyNode, mBodyEnt);
+    btTransform startTransform;
+	startTransform.setIdentity ();
+	startTransform.setOrigin (btVector3(0.0, 24.0, 0.0));
     
+    
+	btPairCachingGhostObject* pGhostObject = new btPairCachingGhostObject();
+	pGhostObject->setWorldTransform(startTransform);
+    
+	btScalar characterHeight=1.75;
+	btScalar characterWidth =1.75;
+	btConvexShape* capsule = new btCapsuleShape(characterWidth,characterHeight);
+	pGhostObject->setCollisionShape (capsule);
+	pGhostObject->setCollisionFlags (btCollisionObject::CF_CHARACTER_OBJECT);
+    
+	btScalar stepHeight = btScalar(0.35);
+    btKinematicCharacterController* pCharactorCtrl = new btKinematicCharacterController (pGhostObject,capsule,stepHeight);
+    
+    BulletMgr::getSingletonPtr()->GetWord()->addCollisionObject(pGhostObject,btBroadphaseProxy::CharacterFilter, btBroadphaseProxy::StaticFilter|btBroadphaseProxy::DefaultFilter);
+    
+	BulletMgr::getSingletonPtr()->GetWord()->addAction(pCharactorCtrl);
+    //BulletMgr::getSingletonPtr()->AddRigidBody(pGhostObject);
+    
+    pCharactorCtrl->reset();
+    pCharactorCtrl->warp (btVector3(0.0, 24.0, 0.0));
+    
+    Player* player = ObjectMgr::getSingletonPtr()->GetPlayer();
+    player->Init(mBodyNode, mBodyEnt, pGhostObject);
+    player->InitControl(pCharactorCtrl);
     //todo
     player->mAniCtrl = new AnimationCtrl(mBodyEnt);
     player->mAniCtrl->PlayAni("RunBase", eAPT_Base);
     player->mAniCtrl->PlayAni("RunTop", eAPT_Top);
+    
+    
+
+    String sName = "box";
+    for (int i=0;i< 10;i++)
+    {
+        String namenum = name + StringConverter::toString(i);
+        Entity* boxEnt = g_SceneMgrPtr->createEntity(namenum, SceneManager::PT_CUBE);
+        Ogre::SceneNode* boxNode = g_SceneMgrPtr->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(0,10+i*3,0));
+    
+        boxEnt->setMaterialName("Examples/Box");
+        boxNode->attachObject(boxEnt);
+        boxNode->scale(Ogre::Vector3(0.01, 0.01, 0.01));
+    
+        btTransform bodyTransform;
+        bodyTransform.setIdentity();
+        bodyTransform.setOrigin(btVector3(0,10+i*3,0));
+        btCollisionShape* boxShape = new btBoxShape(btVector3(0.5,0.5,0.5));
+        btScalar mass(1.);//positive mass means dynamic/moving  object
+        bool isDynamic = (mass != 0.f);
+        btVector3 localInertia(0,0,0);
+   		if (isDynamic)
+                boxShape->calculateLocalInertia(mass,localInertia);
+    		
+        btDefaultMotionState* myMotionState = new btDefaultMotionState(bodyTransform);
+    	btRigidBody::btRigidBodyConstructionInfo rbInfo(mass,myMotionState,boxShape,localInertia);
+   		btRigidBody* boxBody=new btRigidBody(rbInfo);
+        
+        Monster* pMonster = new Monster();
+        pMonster->Init(boxNode, boxEnt, boxBody);
+
+        ObjectMgr::getSingletonPtr()->AddMonster(pMonster);
+    
+        //most applications shouldn't disable deactivation, but for this demo it is better.
+        boxBody->setActivationState(DISABLE_DEACTIVATION);
+    		//add the body to the dynamics world
+        
+        BulletMgr::getSingletonPtr()->AddRigidBody(boxBody);
+    }
 }

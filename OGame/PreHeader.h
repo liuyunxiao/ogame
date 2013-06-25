@@ -12,9 +12,10 @@
 #include "btBulletDynamicsCommon.h"
 #include "btBulletCollisionCommon.h"
 #include "btGhostObject.h"
+#include "btKinematicCharacterController.h"
 
 
 #include "Ogre.h"
 using namespace Ogre;
 
-#endif
+#endif｀

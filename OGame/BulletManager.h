@@ -17,9 +17,9 @@ public:
     bool Init();
     void Update(double delta);
     
-    void CreateCharactor();
+    void AddRigidBody(btRigidBody* pBody);
     
-    btPairCachingGhostObject* CreateGhostObj();
+    btDiscreteDynamicsWorld* GetWord()const {return mDynamicsWorld;}
 private:
 	BulletMgr(const BulletMgr&);
 	BulletMgr& operator= (const BulletMgr&);
