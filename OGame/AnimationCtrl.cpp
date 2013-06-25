@@ -26,6 +26,10 @@ void AnimationCtrl::PlayAni(String name, EAniPartType partType, bool bLoop)
     if(NULL == ani)
         return;
     
+    if(mAniParts[partType])
+    {
+        mAniParts[partType]->setEnabled(false);
+    }
     mAniParts[partType] = ani;
     mAniParts[partType]->setLoop(bLoop);
     mAniParts[partType]->setEnabled(true);

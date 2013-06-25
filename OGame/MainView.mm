@@ -8,11 +8,20 @@
 
 #import "MainView.h"
 #include "OgreManager.h"
+#include "Player.h"
+#include "ObjectManager.h"
+
 @implementation MainView
 
 -(IBAction)testCicked:(id)sender
 {
-    g_OgreFramePtr->shoutBox();
+    //g_OgreFramePtr->shoutBox();
+    
+    Player* pPlayer = ObjectMgr::getSingletonPtr()->GetPlayer();
+    if(!pPlayer)
+        return;
+    
+    pPlayer->Jump();
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

@@ -54,7 +54,8 @@ bool MapMgr::EnterMap(String name)
     groundTransform.setOrigin(btVector3(0,0,0));
     
     btVector3 norm(0,1,0);
-    btCollisionShape* groundShape = new btStaticPlaneShape(norm,0.0);
+    //btCollisionShape* groundShape = new btStaticPlaneShape(norm,0.0);
+    btCollisionShape* groundShape = new btBoxShape(btVector3(50, 1, 50));
     btScalar mass(0.);	//rigidbody is dynamic if and only if mass is non zero, otherwise static
     bool isDynamic = (mass != 0.f);
     btVector3 localInertia(0,0,0);
@@ -71,9 +72,10 @@ bool MapMgr::EnterMap(String name)
     BulletMgr::getSingletonPtr()->AddRigidBody(sFloorPlaneBody);
     
     
-    SceneNode* mBodyNode = g_SceneMgrPtr->getRootSceneNode()->createChildSceneNode(Vector3::UNIT_Y * 5);
+    SceneNode* mBodyNode = g_SceneMgrPtr->getRootSceneNode()->createChildSceneNode();
     Entity* mBodyEnt = g_SceneMgrPtr->createEntity("SinbadBody", "Sinbad.mesh");
     mBodyNode->attachObject(mBodyEnt);
+    //mBodyNode->yaw(Radian(Math::PI / 2));
 
     //mBodyNode->attachObject(g_SceneMgrPtr->createParticleSystem("smoke", "Examples/Smoke"));
     
@@ -84,14 +86,15 @@ bool MapMgr::EnterMap(String name)
     
     btTransform startTransform;
 	startTransform.setIdentity ();
+    
 	startTransform.setOrigin (btVector3(0.0, 24.0, 0.0));
     
     
 	btPairCachingGhostObject* pGhostObject = new btPairCachingGhostObject();
 	pGhostObject->setWorldTransform(startTransform);
     
-	btScalar characterHeight=1.75;
-	btScalar characterWidth =1.75;
+	btScalar characterHeight=5;
+	btScalar characterWidth =3;
 	btConvexShape* capsule = new btCapsuleShape(characterWidth,characterHeight);
 	pGhostObject->setCollisionShape (capsule);
 	pGhostObject->setCollisionFlags (btCollisionObject::CF_CHARACTER_OBJECT);
@@ -102,10 +105,19 @@ bool MapMgr::EnterMap(String name)
     BulletMgr::getSingletonPtr()->GetWord()->addCollisionObject(pGhostObject,btBroadphaseProxy::CharacterFilter, btBroadphaseProxy::StaticFilter|btBroadphaseProxy::DefaultFilter);
     
 	BulletMgr::getSingletonPtr()->GetWord()->addAction(pCharactorCtrl);
+    
+    BulletMgr::getSingletonPtr()->GetWord()->getBroadphase()->getOverlappingPairCache()->cleanProxyFromPairs(pGhostObject->getBroadphaseHandle(),BulletMgr::getSingletonPtr()->GetWord()->getDispatcher());
     //BulletMgr::getSingletonPtr()->AddRigidBody(pGhostObject);
     
     pCharactorCtrl->reset();
     pCharactorCtrl->warp (btVector3(0.0, 24.0, 0.0));
+    pCharactorCtrl->setJumpSpeed(8.0);
+    pCharactorCtrl->setFallSpeed(95.0);
+    btTransform& form = pGhostObject->getWorldTransform();
+    btQuaternion quat;
+    //quat.setRotation(btVector3(0.0, 1.0, 0.0), -3.14 / 2.0);
+    //form.setRotation(quat);
+    //startTransform.getRotation().setRotation(btVector3(0.0, 1.0, 0.0), 3.14 / 2.0);
     
     Player* player = ObjectMgr::getSingletonPtr()->GetPlayer();
     player->Init(mBodyNode, mBodyEnt, pGhostObject);

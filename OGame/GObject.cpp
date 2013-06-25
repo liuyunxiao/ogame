@@ -35,6 +35,7 @@ void GObject::Init(SceneNode* node, Entity* ent, btCollisionObject* collison)
         mCollisionObject->setUserPointer((void*)this);
 }
 
+
 void GObject::UpdatePhyTransform(const btTransform &trans)
 {
     if(!mSceneNode || !mCollisionObject)

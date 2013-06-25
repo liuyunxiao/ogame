@@ -29,16 +29,17 @@ void Role::Update(double delta)
 
 void Role::SetDirtion(Vector2 dir)
 {
-    if(mSceneNode)
+    if(mCollisionObject)
     {
-        Radian rad = dir.angleBetween(Vector2(1.0, 0));
-        if(dir.y < 0.0)
+        Radian rad = dir.angleBetween(Vector2(1.0, 0.0));
+        if(dir.y > 0.0)
         {
             rad = 2 * Math::PI - rad.valueRadians();
         }
         rad = rad.valueRadians() + Math::PI / 2;
         Quaternion qut;
         qut.FromAngleAxis(rad, Vector3::UNIT_Y);
-        mSceneNode->setOrientation(qut);
+        
+        mCollisionObject->getWorldTransform().setRotation(btQuaternion(qut.x, qut.y, qut.z, qut.w));
     }
 }

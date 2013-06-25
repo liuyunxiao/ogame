@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040A577817796423002793FA /* PlayerFSM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 040A577617796423002793FA /* PlayerFSM.cpp */; };
 		041A9D181772D92F008E8467 /* GObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D161772D92F008E8467 /* GObject.cpp */; };
 		041A9D1B1772E000008E8467 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D191772E000008E8467 /* Player.cpp */; };
 		041A9D1F1772E6D4008E8467 /* AnimationCtrl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D1D1772E6D4008E8467 /* AnimationCtrl.cpp */; };
@@ -175,6 +176,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040A577617796423002793FA /* PlayerFSM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerFSM.cpp; sourceTree = "<group>"; };
+		040A577717796423002793FA /* PlayerFSM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerFSM.h; sourceTree = "<group>"; };
 		041A9D161772D92F008E8467 /* GObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GObject.cpp; sourceTree = "<group>"; };
 		041A9D171772D92F008E8467 /* GObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GObject.h; sourceTree = "<group>"; };
 		041A9D191772E000008E8467 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
@@ -673,6 +676,8 @@
 		0484C89E17741F250066C862 /* FSM */ = {
 			isa = PBXGroup;
 			children = (
+				040A577617796423002793FA /* PlayerFSM.cpp */,
+				040A577717796423002793FA /* PlayerFSM.h */,
 			);
 			name = FSM;
 			sourceTree = "<group>";
@@ -1646,6 +1651,7 @@
 				04E1F1F01777D94A009F4143 /* MINILZO.C in Sources */,
 				04E1F1F11777D94A009F4143 /* ClientNet.cpp in Sources */,
 				04E1F1F21777D94A009F4143 /* globe_table.cpp in Sources */,
+				040A577817796423002793FA /* PlayerFSM.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

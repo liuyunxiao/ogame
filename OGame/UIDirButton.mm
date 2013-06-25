@@ -42,6 +42,12 @@
                             viewRec.size.height / 2 - btnRec.size.height / 2,
                             btnRec.size.width,
                             btnRec.size.height);
+    
+    Player* pPlayer = ObjectMgr::getSingletonPtr()->GetPlayer();
+    if(!pPlayer)
+        return;
+    
+    pPlayer->SetRun(false);
 }
 -(void) panGestureUpdated:(UIPanGestureRecognizer*)panGesture
 {
@@ -63,7 +69,7 @@
             
             //转换到笛卡尔坐标系
             Vector2 curPos(point.x - viewRec.size.width / 2,
-                           -point.y + viewRec.size.height / 2);
+                           point.y - viewRec.size.height / 2);
             
             
             if(curPos.length() >= 60.0f)
@@ -71,13 +77,14 @@
                 Vector2 norPos = curPos;
                 norPos.normalise();
                 Vector2 newPos = 60.0f * norPos;
-                self.frame = CGRectMake(newPos.x + viewRec.size.width / 2 - btnRec.size.width / 2, viewRec.size.height / 2 - newPos.y - btnRec.size.height / 2, btnRec.size.width, btnRec.size.height);
+                self.frame = CGRectMake(newPos.x + viewRec.size.width / 2 - btnRec.size.width / 2, newPos.y + viewRec.size.height / 2 - btnRec.size.height / 2, btnRec.size.width, btnRec.size.height);
             }
             else
             {
                 self.frame = CGRectMake(point.x - btnRec.size.width / 2, point.y - btnRec.size.height / 2, btnRec.size.width, btnRec.size.height);
             }
             pPlayer->SetDirtion(curPos);
+            pPlayer->SetRun(true);
             break;
         }
         case UIGestureRecognizerStateEnded:

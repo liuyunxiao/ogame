@@ -7,9 +7,9 @@
 //
 
 #include "Player.h"
-
-
-Player::Player():mCharacterCtl(0)
+#include "AnimationCtrl.h"
+#include "OgreManager.h"
+Player::Player():mCharacterCtl(0),mbRun(false)
 {
     
 }
@@ -23,6 +23,31 @@ bool Player::InitControl(btKinematicCharacterController* pCharacter)
 {
     mCharacterCtl = pCharacter;
 }
+void Player::SetRun(bool bRun)
+{
+    mbRun = bRun;
+    if(mbRun)
+    {
+        mAniCtrl->PlayAni("RunBase", eAPT_Base);
+        mAniCtrl->PlayAni("RunTop", eAPT_Top);
+    }
+    else
+    {
+        mAniCtrl->PlayAni("IdleBase", eAPT_Base);
+        mAniCtrl->PlayAni("IdleTop", eAPT_Top);
+        
+    }
+}
+
+ void Player::Jump()
+{
+    if(mCharacterCtl)
+    {
+        mCharacterCtl->jump();
+        mAniCtrl->PlayAni("JumpLoop", eAPT_Base);
+        mAniCtrl->PlayAni("JumpLoop", eAPT_Top);
+    }
+}
 
 void Player::Update(double delta)
 {
@@ -30,24 +55,31 @@ void Player::Update(double delta)
     
     if(mCharacterCtl)
     {
-        btTransform xform;
-		xform = mCollisionObject->getWorldTransform ();
+        btVector3 walkDir(0.0, 0.0, 0.0);
         
+        btTransform& xform = mCollisionObject->getWorldTransform ();
 		btVector3 forwardDir = xform.getBasis()[2];
-        //	printf("forwardDir=%f,%f,%f\n",forwardDir[0],forwardDir[1],forwardDir[2]);
-		btVector3 upDir = xform.getBasis()[1];
-		btVector3 strafeDir = xform.getBasis()[0];
-		forwardDir.normalize ();
-		upDir.normalize ();
-		strafeDir.normalize ();
-        
-		btVector3 walkDirection = btVector3(0.8, 0.0, 0.0);
-		btScalar walkVelocity = btScalar(1.1) * 4.0; // 4 km/h -> 1.1 m/s
+        forwardDir.setZ(-forwardDir.z());
+        forwardDir.normalize();
+        //forwardDir.rotate(btVector3(0.0, 1.0, 0.0), -3.14 / 2.0);
+        forwardDir.normalize();
+		btScalar walkVelocity = btScalar(1.1) * 10.0; // 4 km/h -> 1.1 m/s
 		btScalar walkSpeed = walkVelocity * delta;
+        if(mbRun)
+        {
+            walkDir += forwardDir;
+        }
+        mCharacterCtl->setWalkDirection(-walkDir*walkSpeed);
         
-        
-		mCharacterCtl->setWalkDirection(walkDirection*walkSpeed);
-
         UpdatePhyTransform(mCollisionObject->getWorldTransform());
+        
+        Vector3 pos = OgreMgr::getSingletonPtr()->m_pCamera->getPosition();
+        Vector3 dir = OgreMgr::getSingletonPtr()->m_pCamera->getDirection();
+        dir.normalise();
+        Vector3 playerPos = mSceneNode->getPosition();
+        
+        Vector3 camPos = playerPos - 50 * dir;
+        OgreMgr::getSingletonPtr()->m_pCamera->setPosition(camPos);
+        
     }
 }

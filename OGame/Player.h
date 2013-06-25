@@ -18,8 +18,11 @@ public:
     ~Player();
     
     virtual void Update(double delta);
+    void SetRun(bool bRun);
+    void Jump();
     bool InitControl(btKinematicCharacterController* pCharacter);
 private:
     btKinematicCharacterController* mCharacterCtl;
+    bool mbRun;
 };
 #endif /* defined(__OGame__Player__) */
