@@ -23,6 +23,7 @@ Description: Utility class to load plugins statically
 
 //加载特效
 #define OGRE_STATIC_ParticleFX 1
+//#define OGRE_STATIC_CgProgramManager
 
 #include "Ogre.h"
 #include "OgreConfigFile.h"
@@ -60,6 +61,7 @@ Description: Utility class to load plugins statically
 #ifdef OGRE_STATIC_OctreeZone
 #  include "OgreOctreeZonePlugin.h"
 #endif
+
 
 namespace Ogre
 {

@@ -14,6 +14,8 @@
 		041A9D221772E777008E8467 /* Role.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D201772E776008E8467 /* Role.cpp */; };
 		041A9D281772E81D008E8467 /* Monster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D261772E81B008E8467 /* Monster.cpp */; };
 		041A9D32177301F3008E8467 /* BulletManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041A9D30177301F3008E8467 /* BulletManager.cpp */; };
+		041FA9D6177A7B8000A976D5 /* TerrainManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041FA9D4177A7B8000A976D5 /* TerrainManager.cpp */; };
+		041FA9E8177A830C00A976D5 /* TextureUsageAgreement.txt in Resources */ = {isa = PBXBuildFile; fileRef = 041FA9DE177A830C00A976D5 /* TextureUsageAgreement.txt */; };
 		0484C8921773EC070066C862 /* PlayerControlView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0484C8911773EC070066C862 /* PlayerControlView.mm */; };
 		0484C8981773F7990066C862 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0484C8971773F7990066C862 /* Default-568h@2x.png */; };
 		0484C89D17741ADA0066C862 /* MapManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0484C89B17741ADA0066C862 /* MapManager.cpp */; };
@@ -159,11 +161,6 @@
 		0498F6F91762D5C000C3CC8A /* btQuickprof.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0498F6751762D5BF00C3CC8A /* btQuickprof.cpp */; };
 		0498F6FA1762D5C000C3CC8A /* btSerializer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0498F6791762D5BF00C3CC8A /* btSerializer.cpp */; };
 		0498F6FB1762D5C000C3CC8A /* VERSION in Resources */ = {isa = PBXBuildFile; fileRef = 0498F67F1762D5BF00C3CC8A /* VERSION */; };
-		04C89FE61771A59D0051FB86 /* emitted_emitter.particle in Resources */ = {isa = PBXBuildFile; fileRef = 04C89FE21771A59D0051FB86 /* emitted_emitter.particle */; };
-		04C89FE71771A59D0051FB86 /* Examples-Water.particle in Resources */ = {isa = PBXBuildFile; fileRef = 04C89FE31771A59D0051FB86 /* Examples-Water.particle */; };
-		04C89FE81771A59D0051FB86 /* Examples.particle in Resources */ = {isa = PBXBuildFile; fileRef = 04C89FE41771A59D0051FB86 /* Examples.particle */; };
-		04C89FE91771A59D0051FB86 /* smoke.particle in Resources */ = {isa = PBXBuildFile; fileRef = 04C89FE51771A59D0051FB86 /* smoke.particle */; };
-		04C89FEB1771B1440051FB86 /* smoke.material in Resources */ = {isa = PBXBuildFile; fileRef = 04C89FEA1771B1440051FB86 /* smoke.material */; };
 		04E1F1F01777D94A009F4143 /* MINILZO.C in Sources */ = {isa = PBXBuildFile; fileRef = 04E1F1E61777D94A009F4143 /* MINILZO.C */; };
 		04E1F1F11777D94A009F4143 /* ClientNet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04E1F1E91777D94A009F4143 /* ClientNet.cpp */; };
 		04E1F1F21777D94A009F4143 /* globe_table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04E1F1EC1777D94A009F4143 /* globe_table.cpp */; };
@@ -191,6 +188,18 @@
 		041A9D271772E81B008E8467 /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
 		041A9D30177301F3008E8467 /* BulletManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BulletManager.cpp; sourceTree = "<group>"; };
 		041A9D31177301F3008E8467 /* BulletManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletManager.h; sourceTree = "<group>"; };
+		041FA9D4177A7B8000A976D5 /* TerrainManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TerrainManager.cpp; sourceTree = "<group>"; };
+		041FA9D5177A7B8000A976D5 /* TerrainManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TerrainManager.h; sourceTree = "<group>"; };
+		041FA9D8177A830C00A976D5 /* dirt_grayrocky_diffusespecular.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = dirt_grayrocky_diffusespecular.dds; sourceTree = "<group>"; };
+		041FA9D9177A830C00A976D5 /* dirt_grayrocky_normalheight.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = dirt_grayrocky_normalheight.dds; sourceTree = "<group>"; };
+		041FA9DA177A830C00A976D5 /* grass_green-01_diffusespecular.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = "grass_green-01_diffusespecular.dds"; sourceTree = "<group>"; };
+		041FA9DB177A830C00A976D5 /* grass_green-01_normalheight.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = "grass_green-01_normalheight.dds"; sourceTree = "<group>"; };
+		041FA9DC177A830C00A976D5 /* growth_weirdfungus-03_diffusespecular.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = "growth_weirdfungus-03_diffusespecular.dds"; sourceTree = "<group>"; };
+		041FA9DD177A830C00A976D5 /* growth_weirdfungus-03_normalheight.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = "growth_weirdfungus-03_normalheight.dds"; sourceTree = "<group>"; };
+		041FA9DE177A830C00A976D5 /* TextureUsageAgreement.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextureUsageAgreement.txt; sourceTree = "<group>"; };
+		041FA9DF177A830C00A976D5 /* terrain_detail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = terrain_detail.jpg; sourceTree = "<group>"; };
+		041FA9E0177A830C00A976D5 /* terrain_texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = terrain_texture.jpg; sourceTree = "<group>"; };
+		041FA9E1177A830C00A976D5 /* terrain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = terrain.png; sourceTree = "<group>"; };
 		0484C8901773EC070066C862 /* PlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerControlView.h; sourceTree = "<group>"; };
 		0484C8911773EC070066C862 /* PlayerControlView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayerControlView.mm; sourceTree = "<group>"; };
 		0484C8971773F7990066C862 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -660,6 +669,20 @@
 			name = game;
 			sourceTree = "<group>";
 		};
+		041FA9D7177A830C00A976D5 /* nvidia */ = {
+			isa = PBXGroup;
+			children = (
+				041FA9D8177A830C00A976D5 /* dirt_grayrocky_diffusespecular.dds */,
+				041FA9D9177A830C00A976D5 /* dirt_grayrocky_normalheight.dds */,
+				041FA9DA177A830C00A976D5 /* grass_green-01_diffusespecular.dds */,
+				041FA9DB177A830C00A976D5 /* grass_green-01_normalheight.dds */,
+				041FA9DC177A830C00A976D5 /* growth_weirdfungus-03_diffusespecular.dds */,
+				041FA9DD177A830C00A976D5 /* growth_weirdfungus-03_normalheight.dds */,
+				041FA9DE177A830C00A976D5 /* TextureUsageAgreement.txt */,
+			);
+			path = nvidia;
+			sourceTree = "<group>";
+		};
 		0484C88F1773EBC40066C862 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
@@ -693,6 +716,8 @@
 				04982FCA175F00600065204E /* OgreManager.h */,
 				041A9D30177301F3008E8467 /* BulletManager.cpp */,
 				041A9D31177301F3008E8467 /* BulletManager.h */,
+				041FA9D4177A7B8000A976D5 /* TerrainManager.cpp */,
+				041FA9D5177A7B8000A976D5 /* TerrainManager.h */,
 			);
 			name = Manger;
 			sourceTree = "<group>";
@@ -814,6 +839,10 @@
 		04982FD2175F00620065204E /* textures */ = {
 			isa = PBXGroup;
 			children = (
+				041FA9D7177A830C00A976D5 /* nvidia */,
+				041FA9DF177A830C00A976D5 /* terrain_detail.jpg */,
+				041FA9E0177A830C00A976D5 /* terrain_texture.jpg */,
+				041FA9E1177A830C00A976D5 /* terrain.png */,
 				04C89FD417719A7C0051FB86 /* smoke.png */,
 				04C89FD517719A7C0051FB86 /* smokecolors.png */,
 				0498F6FC1762DF2C00C3CC8A /* spotlight_image.png */,
@@ -1475,17 +1504,13 @@
 				0496082817604F3C00FE626B /* MainView.xib in Resources */,
 				0498F6801762D5BF00C3CC8A /* LICENSE in Resources */,
 				0498F6FB1762D5C000C3CC8A /* VERSION in Resources */,
-				04C89FE61771A59D0051FB86 /* emitted_emitter.particle in Resources */,
-				04C89FE71771A59D0051FB86 /* Examples-Water.particle in Resources */,
-				04C89FE81771A59D0051FB86 /* Examples.particle in Resources */,
-				04C89FE91771A59D0051FB86 /* smoke.particle in Resources */,
-				04C89FEB1771B1440051FB86 /* smoke.material in Resources */,
 				0484C8981773F7990066C862 /* Default-568h@2x.png in Resources */,
 				49A406061776202600418A68 /* MainView.xib in Resources */,
 				49A406071776202600418A68 /* PlayerControlView.xib in Resources */,
 				49A4060A177620FF00418A68 /* spotlight_image.png in Resources */,
 				493C299D17770012004DB81D /* btn_archor@2x.png in Resources */,
 				493C29A017770327004DB81D /* bg_archor_circle@2x.png in Resources */,
+				041FA9E8177A830C00A976D5 /* TextureUsageAgreement.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1652,6 +1677,7 @@
 				04E1F1F11777D94A009F4143 /* ClientNet.cpp in Sources */,
 				04E1F1F21777D94A009F4143 /* globe_table.cpp in Sources */,
 				040A577817796423002793FA /* PlayerFSM.cpp in Sources */,
+				041FA9D6177A7B8000A976D5 /* TerrainManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1755,7 +1781,10 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/lib\"",
+				);
 				GCC_PREFIX_HEADER = "OGame/OGame-Prefix.h";
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
@@ -1767,6 +1796,7 @@
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OIS\"",
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE/Plugins/ParticleFX\"",
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/iOSDependencies/include\"",
+					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE/Terrain\"",
 					"\"$(SDKROOT)/usr/include/libxml2\"",
 					"\"$(PROJECT_NAME)/Bullet/src\"",
 					"\"$(PROJECT_NAME)/Bullet/src/LinearMath\"",
@@ -1804,6 +1834,7 @@
 					"-lz",
 					"-lxml2",
 					"-lPlugin_ParticleFXStatic",
+					"-lOgreTerrainStatic",
 				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1816,7 +1847,10 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/lib\"",
+				);
 				GCC_PREFIX_HEADER = "OGame/OGame-Prefix.h";
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
@@ -1828,6 +1862,7 @@
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OIS\"",
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE/Plugins/ParticleFX\"",
 					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/iOSDependencies/include\"",
+					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE/Terrain\"",
 					"\"$(SDKROOT)/usr/include/libxml2\"",
 					"\"$(PROJECT_NAME)/Bullet/src\"",
 					"\"$(PROJECT_NAME)/Bullet/src/LinearMath\"",
@@ -1865,6 +1900,7 @@
 					"-lz",
 					"-lxml2",
 					"-lPlugin_ParticleFXStatic",
+					"-lOgreTerrainStatic",
 				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;

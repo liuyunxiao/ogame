@@ -18,4 +18,16 @@
 #include "Ogre.h"
 using namespace Ogre;
 
-#endif｀
+
+//#define USING_OGRE_TERRAIN
+#ifdef USING_OGRE_TERRAIN
+#include "OgreTerrain.h"
+#include "OgreTerrainGroup.h"
+#include "OgreTerrainQuadTreeNode.h"
+#include "OgreTerrainMaterialGeneratorA.h"
+#endif
+
+
+#endif
+
+
