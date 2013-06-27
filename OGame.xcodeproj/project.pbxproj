@@ -161,6 +161,9 @@
 		0498F6F91762D5C000C3CC8A /* btQuickprof.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0498F6751762D5BF00C3CC8A /* btQuickprof.cpp */; };
 		0498F6FA1762D5C000C3CC8A /* btSerializer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0498F6791762D5BF00C3CC8A /* btSerializer.cpp */; };
 		0498F6FB1762D5C000C3CC8A /* VERSION in Resources */ = {isa = PBXBuildFile; fileRef = 0498F67F1762D5BF00C3CC8A /* VERSION */; };
+		04BCAD5B177C395000B503EF /* EffectManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04BCAD59177C395000B503EF /* EffectManager.cpp */; };
+		04BCAD5E177C42E400B503EF /* PlayerState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04BCAD5C177C42E400B503EF /* PlayerState.cpp */; };
+		04BCAD61177C42F600B503EF /* FSMState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04BCAD5F177C42F600B503EF /* FSMState.cpp */; };
 		04E1F1F01777D94A009F4143 /* MINILZO.C in Sources */ = {isa = PBXBuildFile; fileRef = 04E1F1E61777D94A009F4143 /* MINILZO.C */; };
 		04E1F1F11777D94A009F4143 /* ClientNet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04E1F1E91777D94A009F4143 /* ClientNet.cpp */; };
 		04E1F1F21777D94A009F4143 /* globe_table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04E1F1EC1777D94A009F4143 /* globe_table.cpp */; };
@@ -601,6 +604,12 @@
 		0498F67F1762D5BF00C3CC8A /* VERSION */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VERSION; sourceTree = "<group>"; };
 		0498F6FC1762DF2C00C3CC8A /* spotlight_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spotlight_image.png; sourceTree = "<group>"; };
 		049918EB1761E42200329B07 /* rockwall.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = rockwall.tga; sourceTree = "<group>"; };
+		04BCAD59177C395000B503EF /* EffectManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EffectManager.cpp; sourceTree = "<group>"; };
+		04BCAD5A177C395000B503EF /* EffectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EffectManager.h; sourceTree = "<group>"; };
+		04BCAD5C177C42E400B503EF /* PlayerState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerState.cpp; sourceTree = "<group>"; };
+		04BCAD5D177C42E400B503EF /* PlayerState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerState.h; sourceTree = "<group>"; };
+		04BCAD5F177C42F600B503EF /* FSMState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FSMState.cpp; sourceTree = "<group>"; };
+		04BCAD60177C42F600B503EF /* FSMState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSMState.h; sourceTree = "<group>"; };
 		04C89FD417719A7C0051FB86 /* smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smoke.png; sourceTree = "<group>"; };
 		04C89FD517719A7C0051FB86 /* smokecolors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smokecolors.png; sourceTree = "<group>"; };
 		04C89FE21771A59D0051FB86 /* emitted_emitter.particle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = emitted_emitter.particle; sourceTree = "<group>"; };
@@ -701,6 +710,10 @@
 			children = (
 				040A577617796423002793FA /* PlayerFSM.cpp */,
 				040A577717796423002793FA /* PlayerFSM.h */,
+				04BCAD5C177C42E400B503EF /* PlayerState.cpp */,
+				04BCAD5D177C42E400B503EF /* PlayerState.h */,
+				04BCAD5F177C42F600B503EF /* FSMState.cpp */,
+				04BCAD60177C42F600B503EF /* FSMState.h */,
 			);
 			name = FSM;
 			sourceTree = "<group>";
@@ -718,6 +731,8 @@
 				041A9D31177301F3008E8467 /* BulletManager.h */,
 				041FA9D4177A7B8000A976D5 /* TerrainManager.cpp */,
 				041FA9D5177A7B8000A976D5 /* TerrainManager.h */,
+				04BCAD59177C395000B503EF /* EffectManager.cpp */,
+				04BCAD5A177C395000B503EF /* EffectManager.h */,
 			);
 			name = Manger;
 			sourceTree = "<group>";
@@ -1678,6 +1693,9 @@
 				04E1F1F21777D94A009F4143 /* globe_table.cpp in Sources */,
 				040A577817796423002793FA /* PlayerFSM.cpp in Sources */,
 				041FA9D6177A7B8000A976D5 /* TerrainManager.cpp in Sources */,
+				04BCAD5B177C395000B503EF /* EffectManager.cpp in Sources */,
+				04BCAD5E177C42E400B503EF /* PlayerState.cpp in Sources */,
+				04BCAD61177C42F600B503EF /* FSMState.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

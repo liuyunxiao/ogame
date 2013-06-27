@@ -9,6 +9,8 @@
 #include "Player.h"
 #include "AnimationCtrl.h"
 #include "OgreManager.h"
+#include "PlayerFSM.h"
+
 Player::Player():mCharacterCtl(0),mbRun(false)
 {
     
@@ -17,6 +19,12 @@ Player::Player():mCharacterCtl(0),mbRun(false)
 Player::~Player()
 {
     
+}
+
+void Player::Init(SceneNode* node, Entity* ent, btCollisionObject* collison)
+{
+    Role::Init(node, ent, collison);
+    mFSM = new PlayerFSM(this);
 }
 
 bool Player::InitControl(btKinematicCharacterController* pCharacter)
@@ -82,5 +90,18 @@ void Player::Update(double delta)
         Vector3 camPos = playerPos - 50 * dir;
         OgreMgr::getSingletonPtr()->m_pCamera->setPosition(camPos);
         
+    }
+}
+
+void Player::OnCollied(GObject* obj)
+{
+    if(obj->GetCollisionObj())
+    {
+        btRigidBody* body = btRigidBody::upcast(obj->GetCollisionObj());
+        if(body)
+        {
+            body->setAngularVelocity(btVector3(0.0, 2.0, 0.0));
+            body->setAngularFactor(btVector3(0.0, -0.2, 0.0));
+        }
     }
 }

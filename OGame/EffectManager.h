@@ -9,6 +9,17 @@
 #ifndef __OGame__EffectManager__
 #define __OGame__EffectManager__
 
-#include <iostream>
+class EffectMgr:public Singleton<EffectMgr>
+{
+public:
+    EffectMgr();
+    ~EffectMgr();
+    
+    
+private:
+    EffectMgr(const EffectMgr&);
+    EffectMgr& operator=(const EffectMgr&);
+};
 
+#define g_pEffectMgr EffectMgr::getSingletonPtr()
 #endif /* defined(__OGame__EffectManager__) */
