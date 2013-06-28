@@ -19,6 +19,7 @@ public:
     void PlayAni(String name, EAniPartType partType, bool bLoop = true);
     void UpdateAnis(double delta);
     
+    bool IsAniEnd(EAniPartType partType);
 private:
     Role*           mOwner;
     AnimationState* mAniParts[eAPT_All];

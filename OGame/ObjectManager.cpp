@@ -37,6 +37,11 @@ bool ObjectMgr::Init()
     Entity* pEnt = g_pSceneMgrPtr->createEntity("SinbadBody", "Sinbad.mesh");
     pNode->attachObject(pEnt);
     
+    float fScaleFactor = 1.8 / pEnt->getBoundingBox().getSize().y;
+    float fWidth = pEnt->getBoundingBox().getSize().x * fScaleFactor;
+    pNode->scale(Vector3(fScaleFactor));
+    Vector3 aabbSize = pEnt->getBoundingBox().getSize() * fScaleFactor;
+    
     Entity* pSwordEnt1 = g_pSceneMgrPtr->createEntity("SinbadSword1", "Sword.mesh");
     Entity* pSwordEnt2 = g_pSceneMgrPtr->createEntity("SinbadSword2", "Sword.mesh");
     pEnt->attachObjectToBone("Handle.L", pSwordEnt1);
@@ -49,14 +54,15 @@ bool ObjectMgr::Init()
 	btPairCachingGhostObject* pGhostObject = new btPairCachingGhostObject();
 	pGhostObject->setWorldTransform(startTransform);
     
-	btScalar characterHeight=5;
-	btScalar characterWidth =3;
-	btConvexShape* capsule = new btCapsuleShape(characterWidth,characterHeight);
-	pGhostObject->setCollisionShape (capsule);
+	btScalar characterHeight=1.8;
+	btScalar characterWidth =fWidth / 2.0f;
+	//btConvexShape* capsule = new btCapsuleShape(characterWidth,characterHeight);
+    btConvexShape* boxShape = new btBoxShape(btVector3(aabbSize.x, aabbSize.y, aabbSize.z));
+	pGhostObject->setCollisionShape (boxShape);
 	pGhostObject->setCollisionFlags (btCollisionObject::CF_CHARACTER_OBJECT);
     
 	btScalar stepHeight = btScalar(1.35);
-    btKinematicCharacterController* pCharactorCtrl = new btKinematicCharacterController (pGhostObject,capsule,stepHeight);
+    btKinematicCharacterController* pCharactorCtrl = new btKinematicCharacterController (pGhostObject,boxShape,stepHeight);
     
     g_pBulletMgr->GetWord()->addCollisionObject(pGhostObject,btBroadphaseProxy::CharacterFilter, btBroadphaseProxy::StaticFilter|btBroadphaseProxy::DefaultFilter);
     
@@ -65,12 +71,13 @@ bool ObjectMgr::Init()
     g_pBulletMgr->GetWord()->getBroadphase()->getOverlappingPairCache()->cleanProxyFromPairs(pGhostObject->getBroadphaseHandle(),g_pBulletMgr->GetWord()->getDispatcher());
     
     g_pBulletMgr->SetGhostObject(pGhostObject);
-    g_pBulletMgr->AddCollisionShape(capsule);
+    g_pBulletMgr->AddCollisionShape(boxShape);
     
     pCharactorCtrl->reset();
     pCharactorCtrl->warp (btVector3(0.0, 24.0, 0.0));
-    pCharactorCtrl->setJumpSpeed(8.0);
-    pCharactorCtrl->setFallSpeed(95.0);
+    pCharactorCtrl->setGravity(20.0);
+    //pCharactorCtrl->setJumpSpeed(5.0);
+    ///pCharactorCtrl->setFallSpeed(95.0);
     
     mPlayer->Init(pNode, pEnt, pGhostObject);
     mPlayer->InitControl(pCharactorCtrl);

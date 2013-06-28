@@ -49,3 +49,17 @@ void AnimationCtrl::UpdateAnis(double delta)
         }
     }
 }
+
+bool AnimationCtrl::IsAniEnd(EAniPartType partType)
+{
+    if(!mAniParts[partType])
+        return true;
+    
+    if(mAniParts[partType]->getLoop())
+        return false;
+    
+    if(mAniParts[partType]->getTimePosition() >= mAniParts[partType]->getLength())
+        return true;
+    
+    return true;
+}

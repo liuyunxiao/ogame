@@ -16,6 +16,7 @@ class PlayerFSM
 public:
     PlayerFSM(Player* pPlayer);
     ~PlayerFSM();
+    void Update();
     void InitDefaultState();
     void RegisterState(String name, FState* state);
     bool ChangeToState(String name);

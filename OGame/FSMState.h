@@ -18,6 +18,7 @@ public:
     virtual void Start(){}
     virtual void Update(){}
     virtual void Exit(){}
+    virtual bool CanStop(){return true;}
     void AddChangeableState(FState* state)
     {
         mStateChangeable.push_back(state);

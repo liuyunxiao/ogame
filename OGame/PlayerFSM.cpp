@@ -13,7 +13,7 @@
 
 PlayerFSM::PlayerFSM(Player* pPlayer):mpOwner(pPlayer),mpCurState(0),mpPreState(0)
 {
-    
+    InitDefaultState();
 }
 
 PlayerFSM::~PlayerFSM()
@@ -40,15 +40,27 @@ void PlayerFSM::RegisterState(String name, FState* state)
 
 bool PlayerFSM::ChangeToState(String name)
 {
+    if(mpCurState)
+    {
+        if(!mpCurState->CanStop())
+            return false;
+    }
+    
     std::map<String, FState*>::iterator itor = mStates.find(name);
     if(itor == mStates.end())
         return false;
     
     FState* newState = itor->second;
     
-    if(mpPreState)
-        mpPreState->Exit();
+    if(mpCurState)
+        mpCurState->Exit();
     
-    mpPreState = newState;
-    newState->Start();
+    mpCurState = newState;
+    mpCurState->Start();
+}
+
+void PlayerFSM::Update()
+{
+    if(mpCurState)
+        mpCurState->Update();
 }

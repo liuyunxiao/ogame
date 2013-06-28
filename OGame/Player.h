@@ -23,10 +23,11 @@ public:
     
     bool InitControl(btKinematicCharacterController* pCharacter);
     //test
-    void SetRun(bool bRun);
+    void Run(bool bRun);
     void Jump();
     
-    
+    bool IsJumping() {return !mCharacterCtl->onGround();}
+    PlayerFSM* GetFSM() const {return mFSM;}
 private:
     btKinematicCharacterController* mCharacterCtl;
     bool mbRun;

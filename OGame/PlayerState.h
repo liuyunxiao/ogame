@@ -22,13 +22,21 @@ private:
 
 class FJumpState: public FState
 {
+    enum EJumpStateType
+    {
+        eJST_Start,
+        eJST_Jumping,
+        eJST_Over,
+        eJST_End,
+    };
 public:
     FJumpState(Player* pPlayer):FState(pPlayer){}
     virtual void Start();
     virtual void Update();
     virtual void Exit();
+    virtual bool CanStop();
 private:
-    
+    EJumpStateType          mCurStateType;
 };
 
 class FRunState: public FState
