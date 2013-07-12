@@ -55,7 +55,7 @@ bool ObjectMgr::Init()
 	pGhostObject->setCollisionShape (capsule);
 	pGhostObject->setCollisionFlags (btCollisionObject::CF_CHARACTER_OBJECT);
     
-	btScalar stepHeight = btScalar(1.35);
+	btScalar stepHeight = btScalar(0.35);
     btKinematicCharacterController* pCharactorCtrl = new btKinematicCharacterController (pGhostObject,capsule,stepHeight);
     
     g_pBulletMgr->GetWord()->addCollisionObject(pGhostObject,btBroadphaseProxy::CharacterFilter, btBroadphaseProxy::StaticFilter|btBroadphaseProxy::DefaultFilter);
