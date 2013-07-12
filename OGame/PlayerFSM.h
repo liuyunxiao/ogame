@@ -9,27 +9,22 @@
 #ifndef __OGame__PlayerFSM__
 #define __OGame__PlayerFSM__
 
+class FState;
 class Player;
-class FState
+class PlayerFSM
 {
 public:
-    FState(Player* pPlayer):mOwner(pPlayer)
-    {}
-    virtual void Start(){}
-    virtual void Update(){}
-    virtual void Exit(){}
-protected:
-    Player*     mOwner;
-};
-
-class FJumpState: public FState
-{
-public:
-    virtual void Start();
-    virtual void Update();
-    virtual void Exit();
+    PlayerFSM(Player* pPlayer);
+    ~PlayerFSM();
+    void Update();
+    void InitDefaultState();
+    void RegisterState(String name, FState* state);
+    bool ChangeToState(String name);
 private:
-    
+    std::map<String, FState*>   mStates;
+    FState*                     mpPreState;
+    FState*                     mpCurState;
+    Player*                     mpOwner;
 };
 
 #endif /* defined(__OGame__PlayerFSM__) */

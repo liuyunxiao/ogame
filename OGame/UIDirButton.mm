@@ -47,7 +47,7 @@
     if(!pPlayer)
         return;
     
-    pPlayer->SetRun(false);
+    pPlayer->Run(false);
 }
 -(void) panGestureUpdated:(UIPanGestureRecognizer*)panGesture
 {
@@ -84,7 +84,7 @@
                 self.frame = CGRectMake(point.x - btnRec.size.width / 2, point.y - btnRec.size.height / 2, btnRec.size.width, btnRec.size.height);
             }
             pPlayer->SetDirtion(curPos);
-            pPlayer->SetRun(true);
+            pPlayer->Run(true);
             break;
         }
         case UIGestureRecognizerStateEnded:

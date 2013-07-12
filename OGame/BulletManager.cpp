@@ -109,25 +109,30 @@ void BulletMgr::Update(double delta)
             pObj->UpdatePhyTransform(trans);
     }
     
-//    int nNumManifold = mDynamicsWorld->getDispatcher()->getNumManifolds();
-//    for(int i = 0;i < nNumManifold; ++i)
-//    {
-//        btPersistentManifold* contactManifld = mDynamicsWorld->getDispatcher()->getManifoldByIndexInternal(i);
-//        
-//        int numContacts = contactManifld->getNumContacts();
-//        for (int j = 0; j < numContacts; ++j)
-//        {
-//            btManifoldPoint& contactPoint = contactManifld->getContactPoint(j);
-//        }
-//        if(numContacts > 0)
-//        {
-//            btCollisionObject* obA = static_cast<btCollisionObject*>(contactManifld->getBody0());
-//            btCollisionObject* obB = static_cast<btCollisionObject*>(contactManifld->getBody1());
-//            
-//            GObject* pObjA = (GObject*)obA->getUserPointer();
-//            GObject* pObjB = (GObject*)obB->getUserPointer();
-//        }
-//    }
+    int nNumManifold = mDynamicsWorld->getDispatcher()->getNumManifolds();
+    for(int i = 0;i < nNumManifold; ++i)
+    {
+        btPersistentManifold* contactManifld = mDynamicsWorld->getDispatcher()->getManifoldByIndexInternal(i);
+        
+        int numContacts = contactManifld->getNumContacts();
+        for (int j = 0; j < numContacts; ++j)
+        {
+            btManifoldPoint& contactPoint = contactManifld->getContactPoint(j);
+        }
+        if(numContacts > 0)
+        {
+            btCollisionObject* obA = static_cast<btCollisionObject*>(contactManifld->getBody0());
+            btCollisionObject* obB = static_cast<btCollisionObject*>(contactManifld->getBody1());
+            
+            GObject* pObjA = (GObject*)obA->getUserPointer();
+            GObject* pObjB = (GObject*)obB->getUserPointer();
+            if(pObjA && pObjB)
+            {
+                pObjA->OnCollied(pObjB);
+                pObjB->OnCollied(pObjA);
+            }
+        }
+    }
 }
 
 void BulletMgr::AddRigidBody(btRigidBody* pBody)

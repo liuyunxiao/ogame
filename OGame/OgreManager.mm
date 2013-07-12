@@ -63,7 +63,7 @@ bool OgreMgr::Init(String wndTitle)
 	m_pSceneMgr->setAmbientLight(Ogre::ColourValue(0.7f, 0.7f, 0.7f));
 	
 	m_pCamera = m_pSceneMgr->createCamera("Camera");
-	m_pCamera->setPosition(Vector3(0, 35, 35));
+	m_pCamera->setPosition(Vector3(0, 8, 25));
 	m_pCamera->lookAt(Vector3(0, 4, 0));
 	m_pCamera->setNearClipDistance(1);
     

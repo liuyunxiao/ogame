@@ -20,6 +20,8 @@ public:
     
     virtual void Update(double delta);
     virtual void SetDirtion(Vector2 dir);
+    
+    AnimationCtrl* GetAniCtrl()const {return mAniCtrl;}
 protected:
     AnimationCtrl*      mAniCtrl;
 };

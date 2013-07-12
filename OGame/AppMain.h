@@ -10,6 +10,10 @@
 #include "MapManager.h"
 #include "ObjectManager.h"
 
+#ifdef USING_OGRE_TERRAIN
+#include "TerrainManager.h"
+#endif
+
 //|||||||||||||||||||||||||||||||||||||||||||||||
 
 #ifdef USE_RTSHADER_SYSTEM

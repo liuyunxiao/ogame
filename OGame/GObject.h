@@ -21,6 +21,7 @@ public:
     
     virtual void Update(double delta){};
     virtual void UpdatePhyTransform(const btTransform& trans);
+    virtual void OnCollied(GObject* obj){}
     
     btCollisionObject*  GetCollisionObj() const {return mCollisionObject;}
     SceneNode*          GetSceneNode() const    {return mSceneNode;}

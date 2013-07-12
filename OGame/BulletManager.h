@@ -8,6 +8,8 @@
 
 #ifndef __OGame__PhysicsManager__
 #define __OGame__PhysicsManager__
+class GObject;
+
 class BulletMgr:public Singleton<BulletMgr>
 {
 public:

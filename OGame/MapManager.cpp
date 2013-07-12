@@ -49,11 +49,11 @@ bool MapMgr::EnterMap(String name)
     
     btTransform groundTransform;
     groundTransform.setIdentity();
-    groundTransform.setOrigin(btVector3(0,0,0));
+    groundTransform.setOrigin(btVector3(0,-0.05,0));
     
     btVector3 norm(0,1,0);
     //btCollisionShape* groundShape = new btStaticPlaneShape(norm,0.0);
-    btCollisionShape* groundShape = new btBoxShape(btVector3(50, 1, 50));
+    btCollisionShape* groundShape = new btBoxShape(btVector3(50, 0.05, 50));
     btScalar mass(0.);	//rigidbody is dynamic if and only if mass is non zero, otherwise static
     bool isDynamic = (mass != 0.f);
     btVector3 localInertia(0,0,0);
@@ -69,6 +69,43 @@ bool MapMgr::EnterMap(String name)
     //add the body to the dynamics world
     BulletMgr::getSingletonPtr()->AddRigidBody(sFloorPlaneBody);
     BulletMgr::getSingletonPtr()->AddCollisionShape(groundShape);
+    
+    
+    
+  
+    {
+        Entity* boxEnt = g_pSceneMgrPtr->createEntity("test1", SceneManager::PT_CUBE);
+        Ogre::SceneNode* boxNode = g_pSceneMgrPtr->getRootSceneNode()->createChildSceneNode();
+        boxEnt->setMaterialName("Examples/Box");
+        boxNode->attachObject(boxEnt);
+        boxNode->scale(Ogre::Vector3(0.01, 0.02, 0.01));
+        
+        btTransform bodyTransform;
+        bodyTransform.setIdentity();
+        bodyTransform.setOrigin(btVector3(0.0,3.0,0.0));
+        btCollisionShape* boxShape = new btBoxShape(btVector3(0.5,1.0,0.5));
+        btScalar mass(1.);
+        bool isDynamic = (mass != 0.f);
+        btVector3 localInertia(0,0,0);
+        if (isDynamic)
+            boxShape->calculateLocalInertia(mass,localInertia);
+    
+        btDefaultMotionState* myMotionState = new btDefaultMotionState(bodyTransform);
+        btRigidBody::btRigidBodyConstructionInfo rbInfo(mass,myMotionState,boxShape,localInertia);
+        btRigidBody* boxBody=new btRigidBody(rbInfo);
+    
+        //boxBody->setActivationState(DISABLE_DEACTIVATION);
+        g_pBulletMgr->AddRigidBody(boxBody);
+        g_pBulletMgr->AddCollisionShape(boxShape);
+    
+        Monster* pMonster = new Monster();
+        pMonster->Init(boxNode, boxEnt, boxBody);
+        g_pObjectMgr->AddMonster(pMonster);
+        
+        btPoint2PointConstraint* constrain = new btPoint2PointConstraint(*boxBody, btVector3(0.0, 6.0, 0.0));
+        
+        g_pBulletMgr->GetWord()->addConstraint(constrain);
+    }
 }
 
 void MapMgr::ShoutMonster()

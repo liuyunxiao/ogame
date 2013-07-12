@@ -114,9 +114,9 @@ void AppMain::start()
     }
     
     new BulletMgr();
-    if(!BulletMgr::getSingleton().Init())
+    if(!g_pBulletMgr->Init())
     {
-        OgreMgr::getSingletonPtr()->m_pLog->logMessage("bulletmgr init error");
+        g_pOgreFramePtr->m_pLog->logMessage("bulletmgr init error");
         return;
     }
     
@@ -124,7 +124,7 @@ void AppMain::start()
     
 	m_bShutdown = false;
     
-	OgreMgr::getSingletonPtr()->m_pLog->logMessage("app initialized!");
+	g_pOgreFramePtr->m_pLog->logMessage("app initialized!");
 	
 #ifdef USE_RTSHADER_SYSTEM
     initializeRTShaderSystem(OgreMgr::getSingletonPtr()->m_pSceneMgr);
@@ -155,17 +155,28 @@ void AppMain::start()
                                                                          baseWhiteNoLighting->getTechnique(1)->getPass(0)->getFragmentProgram()->getName());
 #endif
     
-    new ObjectMgr();
-    if(!ObjectMgr::getSingleton().Init())
+#ifdef  USING_OGRE_TERRAIN
+    new TerrainMgr();
+    if(!g_pTerrainMgr->Init())
     {
-        OgreMgr::getSingletonPtr()->m_pLog->logMessage("objectmgr init error");
+        g_pOgreFramePtr->m_pLog->logMessage("terrainmgr init error");
+        return;
+        return;
+    }
+    
+#endif
+    
+    new ObjectMgr();
+    if(!g_pObjectMgr->Init())
+    {
+        g_pOgreFramePtr->m_pLog->logMessage("objectmgr init error");
         return;
     }
     
     new MapMgr();
-    if(!MapMgr::getSingleton().Init())
+    if(!g_pMapMgr->Init())
     {
-        OgreMgr::getSingletonPtr()->m_pLog->logMessage("mapmgr init error");
+        g_pOgreFramePtr->m_pLog->logMessage("mapmgr init error");
         return;
     }
     MapMgr::getSingletonPtr()->EnterMap("ff");
