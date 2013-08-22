@@ -88,7 +88,7 @@ void Player::Update(double delta)
         forwardDir.normalize();
         //forwardDir.rotate(btVector3(0.0, 1.0, 0.0), -3.14 / 2.0);
         forwardDir.normalize();
-		btScalar walkVelocity = btScalar(3.1) * 4.0; // 4 km/h -> 1.1 m/s
+		btScalar walkVelocity = btScalar(2.5) * 4.0; // 4 km/h -> 1.1 m/s
 		btScalar walkSpeed = walkVelocity * delta;
         if(mbRun)
         {

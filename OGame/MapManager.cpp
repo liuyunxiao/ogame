@@ -69,8 +69,52 @@ bool MapMgr::EnterMap(String name)
     //add the body to the dynamics world
     BulletMgr::getSingletonPtr()->AddRigidBody(sFloorPlaneBody);
     BulletMgr::getSingletonPtr()->AddCollisionShape(groundShape);
+    for(int i = 0; i < 100; ++i)
+    {
+        for(int j = 0; j < 3; ++j)
+        {
+            if(rand() % 100 > 60)
+            {
+                static int shoutnum = 0;
+                String name = "barr";
+                
+                Vector3 caPos = g_pOgreFramePtr->m_pCamera->getPosition();
+                caPos.z -= 3;
+                Vector3 caOr = g_pOgreFramePtr->m_pCamera->getDirection();
+                
+                String namenum = name + StringConverter::toString(++shoutnum);
+                Entity* boxEnt = g_pSceneMgrPtr->createEntity(namenum, SceneManager::PT_CUBE);
+                Ogre::SceneNode* boxNode = g_pSceneMgrPtr->getRootSceneNode()->createChildSceneNode(caPos);
+                boxEnt->setMaterialName("Examples/Box");
+                boxNode->attachObject(boxEnt);
+                boxNode->scale(Ogre::Vector3(0.01, 0.01, 0.01));
+                
+                btTransform bodyTransform;
+                bodyTransform.setIdentity();
+                bodyTransform.setOrigin(btVector3((j-1)* 5,0.5,i*20));
+                btCollisionShape* boxShape = new btBoxShape(btVector3(0.5,0.5,0.5));
+                btScalar mass(1.);
+                bool isDynamic = (mass != 0.f);
+                btVector3 localInertia(0,0,0);
+                if (isDynamic)
+                    boxShape->calculateLocalInertia(mass,localInertia);
+                
+                btDefaultMotionState* myMotionState = new btDefaultMotionState(bodyTransform);
+                btRigidBody::btRigidBodyConstructionInfo rbInfo(mass,myMotionState,boxShape,localInertia);
+                btRigidBody* boxBody=new btRigidBody(rbInfo);
+                
+                //boxBody->setActivationState(DISABLE_DEACTIVATION);
+                g_pBulletMgr->AddRigidBody(boxBody);
+                g_pBulletMgr->AddCollisionShape(boxShape);
+                
+                Monster* pMonster = new Monster();
+                pMonster->Init(boxNode, boxEnt, boxBody);
+                g_pObjectMgr->AddMonster(pMonster);
+            }
+        }
+    }
 //
-//    
+//
 //    
 //  
 //    {
