@@ -11,6 +11,8 @@
 @interface MainView : UIView
 {
     IBOutlet UILabel* texFps;
+    
+    CGPoint             mStartSwipePoint;
 }
 
 @end

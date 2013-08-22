@@ -22,6 +22,10 @@ public:
     virtual void Init(SceneNode* node, Entity* ent = 0, btCollisionObject* collison = 0);
     
     bool InitControl(btKinematicCharacterController* pCharacter);
+    
+    void SetSpeed(Vector3 speed);
+    void GoLeft();
+    void GoRight();
     //test
     void Run(bool bRun);
     void Jump();

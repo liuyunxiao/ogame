@@ -65,8 +65,8 @@ void FJumpState::Update()
         AnimationCtrl* pCtrl = mOwner->GetAniCtrl();
         if(pCtrl->IsAniEnd(eAPT_Base) && pCtrl->IsAniEnd(eAPT_Top))
         {
-            mOwner->GetFSM()->ChangeToState("Run");
             mCurStateType = eJST_End;
+            mOwner->GetFSM()->ChangeToState("Run");
         }
     }
 }

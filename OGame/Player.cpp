@@ -45,6 +45,11 @@ void Player::Run(bool bRun)
     }
 }
 
+void Player::SetSpeed(Vector3 speed)
+{
+    mCharacterCtl->setVelocityForTimeInterval(btVector3(0.0,0.0,4.0), 0.5);
+}
+
  void Player::Jump()
 {
     if(mCharacterCtl)
@@ -52,6 +57,20 @@ void Player::Run(bool bRun)
         mCharacterCtl->jump();
         mFSM->ChangeToState("Jump");
     }
+}
+
+void Player::GoLeft()
+{
+    btTransform& xform = mCollisionObject->getWorldTransform();
+    btVector3& ori = xform.getOrigin();
+    ori.setX(ori.getX() + 5);
+}
+
+void Player::GoRight()
+{
+    btTransform& xform = mCollisionObject->getWorldTransform();
+    btVector3& ori = xform.getOrigin();
+    ori.setX(ori.getX() - 5);
 }
 
 void Player::Update(double delta)
@@ -69,7 +88,7 @@ void Player::Update(double delta)
         forwardDir.normalize();
         //forwardDir.rotate(btVector3(0.0, 1.0, 0.0), -3.14 / 2.0);
         forwardDir.normalize();
-		btScalar walkVelocity = btScalar(1.1) * 4.0; // 4 km/h -> 1.1 m/s
+		btScalar walkVelocity = btScalar(3.1) * 4.0; // 4 km/h -> 1.1 m/s
 		btScalar walkSpeed = walkVelocity * delta;
         if(mbRun)
         {
@@ -86,7 +105,7 @@ void Player::Update(double delta)
         playerPos.y -= 0.3;
         mSceneNode->setPosition(playerPos);
         
-        Vector3 camPos = playerPos - 10 * dir;
+        Vector3 camPos = playerPos - 13 * dir;
         OgreMgr::getSingletonPtr()->m_pCamera->setPosition(camPos);
         
     }

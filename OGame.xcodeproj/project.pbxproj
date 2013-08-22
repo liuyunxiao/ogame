@@ -167,6 +167,7 @@
 		04E1F1F01777D94A009F4143 /* MINILZO.C in Sources */ = {isa = PBXBuildFile; fileRef = 04E1F1E61777D94A009F4143 /* MINILZO.C */; };
 		04E1F1F11777D94A009F4143 /* ClientNet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04E1F1E91777D94A009F4143 /* ClientNet.cpp */; };
 		04E1F1F21777D94A009F4143 /* globe_table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04E1F1EC1777D94A009F4143 /* globe_table.cpp */; };
+		04EFA07D17C5FBFA00667CB3 /* GameMain.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EFA07C17C5FBFA00667CB3 /* GameMain.xib */; };
 		493C299D17770012004DB81D /* btn_archor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 493C299C17770012004DB81D /* btn_archor@2x.png */; };
 		493C29A017770327004DB81D /* bg_archor_circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 493C299F17770327004DB81D /* bg_archor_circle@2x.png */; };
 		49A405F817760CF500418A68 /* UIDirButton.mm in Sources */ = {isa = PBXBuildFile; fileRef = 49A405F717760CF500418A68 /* UIDirButton.mm */; };
@@ -630,6 +631,7 @@
 		04E1F1EC1777D94A009F4143 /* globe_table.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = globe_table.cpp; sourceTree = "<group>"; };
 		04E1F1ED1777D94A009F4143 /* globe_table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = globe_table.h; sourceTree = "<group>"; };
 		04E1F1EE1777D94A009F4143 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		04EFA07C17C5FBFA00667CB3 /* GameMain.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameMain.xib; sourceTree = "<group>"; };
 		493C299C17770012004DB81D /* btn_archor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_archor@2x.png"; sourceTree = "<group>"; };
 		493C299F17770327004DB81D /* bg_archor_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_archor_circle@2x.png"; sourceTree = "<group>"; };
 		49A405F617760CF500418A68 /* UIDirButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDirButton.h; sourceTree = "<group>"; };
@@ -816,6 +818,7 @@
 				04983013175F00620065204E /* plugins.cfg */,
 				04983015175F00620065204E /* resources.cfg */,
 				04982FCD175F00620065204E /* media */,
+				04EFA07C17C5FBFA00667CB3 /* GameMain.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1526,6 +1529,7 @@
 				493C299D17770012004DB81D /* btn_archor@2x.png in Resources */,
 				493C29A017770327004DB81D /* bg_archor_circle@2x.png in Resources */,
 				041FA9E8177A830C00A976D5 /* TextureUsageAgreement.txt in Resources */,
+				04EFA07D17C5FBFA00667CB3 /* GameMain.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1543,7 +1547,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "export CODESIGN_ALLOCATE=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ] || [ \"${PLATFORM_NAME}\" == \"ipados\" ]; then\n/Applications/Xcode.app/Contents/Developer/iphoneentitlements/gen_entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi\n# This shell script simply copies resources into their respective locations\nditto \"$PROJECT_DIR/$PROJECT_NAME/media/\" \"$BUILT_PRODUCTS_DIR/OGame.app/media/\"\nditto $PROJECT_DIR/$PROJECT_NAME/*.cfg \"$BUILT_PRODUCTS_DIR/OGame.app/\"\n";
+			shellScript = "export CODESIGN_ALLOCATE=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ] || [ \"${PLATFORM_NAME}\" == \"ipados\" ]; then\n/Applications/Xcode.app/Contents/Developer/iphoneentitlements/gen_entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi\n# This shell script simply copies resources into their respective locations\nditto \"$PROJECT_DIR/$PROJECT_NAME/media/\" \"$BUILT_PRODUCTS_DIR/OGame.app/media/\"\nditto $PROJECT_DIR/$PROJECT_NAME/*.cfg \"$BUILT_PRODUCTS_DIR/OGame.app/\"\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1717,7 +1721,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zhu Fengfan (PMJ24TFX94)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Zhu Fengfan (PMJ24TFX94)";
 				COPY_PHASE_STRIP = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = No;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1747,6 +1752,8 @@
 					"\"$(OGRE_SDK_ROOT)/iOSDependencies/lib\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -1757,7 +1764,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zhu Fengfan (PMJ24TFX94)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Zhu Fengfan (PMJ24TFX94)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_INLINES_ARE_PRIVATE_EXTERN = No;
@@ -1787,6 +1795,8 @@
 					"\"$(OGRE_SDK_ROOT)/iOSDependencies/lib\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

@@ -49,7 +49,7 @@ bool ObjectMgr::Init()
     
     btTransform startTransform;
 	startTransform.setIdentity ();
-	startTransform.setOrigin (btVector3(0.0, 24.0, 0.0));
+	startTransform.setOrigin (btVector3(0.0, 5.0, 0.0));
     
 	btPairCachingGhostObject* pGhostObject = new btPairCachingGhostObject();
 	pGhostObject->setWorldTransform(startTransform);
@@ -81,6 +81,8 @@ bool ObjectMgr::Init()
     
     mPlayer->Init(pNode, pEnt, pGhostObject);
     mPlayer->InitControl(pCharactorCtrl);
+    //mPlayer->SetSpeed(Vector3(0.0,0.0,30.0));
+    mPlayer->Run(true);
     return true;
 }
 

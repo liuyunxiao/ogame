@@ -13,6 +13,66 @@
 #include "MapManager.h"
 @implementation MainView
 
+-(void)awakeFromNib
+{
+    UISwipeGestureRecognizer *recognizer;
+    
+    recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
+    [self addGestureRecognizer:recognizer];
+    [recognizer release];
+    
+    recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionUp)];
+    [self addGestureRecognizer:recognizer];
+    [recognizer release];
+    
+    recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionDown)];
+    [self addGestureRecognizer:recognizer];
+    [recognizer release];
+    
+    recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+    [self addGestureRecognizer:recognizer];
+    [recognizer release];
+}
+
+-(void)handleSwipeFrom:(UISwipeGestureRecognizer*)swipeGesture
+{
+    if (swipeGesture.direction==UISwipeGestureRecognizerDirectionLeft)
+    {
+        Player* pPlayer = ObjectMgr::getSingletonPtr()->GetPlayer();
+        if(!pPlayer)
+            return;
+        
+        pPlayer->GoLeft();
+        NSLog(@"UISwipeGestureRecognizerDirectionLeft");
+    }
+    else if(swipeGesture.direction==UISwipeGestureRecognizerDirectionRight)
+    {
+        Player* pPlayer = ObjectMgr::getSingletonPtr()->GetPlayer();
+        if(!pPlayer)
+            return;
+        
+        pPlayer->GoRight();
+        NSLog(@"UISwipeGestureRecognizerDirectionRight");
+    }
+    else if(swipeGesture.direction==UISwipeGestureRecognizerDirectionDown)
+    {
+        NSLog(@"UISwipeGestureRecognizerDirectionDown");
+    }
+    else if(swipeGesture.direction==UISwipeGestureRecognizerDirectionUp)
+    {
+        Player* pPlayer = ObjectMgr::getSingletonPtr()->GetPlayer();
+        if(!pPlayer)
+            return;
+        
+        pPlayer->Jump();
+        NSLog(@"UISwipeGestureRecognizerDirectionUp");
+    }
+}
+
 -(IBAction)testCicked:(id)sender
 {
     Player* pPlayer = ObjectMgr::getSingletonPtr()->GetPlayer();

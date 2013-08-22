@@ -63,9 +63,10 @@ bool OgreMgr::Init(String wndTitle)
 	m_pSceneMgr->setAmbientLight(Ogre::ColourValue(0.7f, 0.7f, 0.7f));
 	
 	m_pCamera = m_pSceneMgr->createCamera("Camera");
-	m_pCamera->setPosition(Vector3(0, 8, 25));
-	m_pCamera->lookAt(Vector3(0, 4, 0));
+	m_pCamera->setPosition(Vector3(0, 25, 25));
+	m_pCamera->lookAt(Vector3(0, 20, 0));
 	m_pCamera->setNearClipDistance(1);
+    m_pCamera->setFarClipDistance(10000.0);
     
 	m_pViewport = m_pRenderWnd->addViewport(m_pCamera);
 	m_pViewport->setBackgroundColour(ColourValue(0.8f, 0.7f, 0.6f, 1.0f));
@@ -103,15 +104,15 @@ bool OgreMgr::Init(String wndTitle)
 
 	m_pRenderWnd->setActive(true);
 
-    NSArray *items = [[NSBundle mainBundle] loadNibNamed:@"MainView" owner:nil options:nil];
+    NSArray *items = [[NSBundle mainBundle] loadNibNamed:@"GameMain" owner:nil options:nil];
     MainView* v = (MainView*)[items objectAtIndex:0];
     
     UIView* pView = NULL;
     m_pRenderWnd->getCustomAttribute("VIEW", &pView);
-    v.userInteractionEnabled = YES;
+    //v.userInteractionEnabled = YES;
     [pView addSubview:v];
     
-    items = [[NSBundle mainBundle] loadNibNamed:@"PlayerControlView" owner:nil options:nil];
+    //items = [[NSBundle mainBundle] loadNibNamed:@"PlayerControlView" owner:nil options:nil];
     
 //    PlayerControlView* subView = (PlayerControlView*)[items objectAtIndex:0];
 //    subView.userInteractionEnabled = YES;
