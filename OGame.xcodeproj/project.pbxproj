@@ -1547,7 +1547,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "export CODESIGN_ALLOCATE=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ] || [ \"${PLATFORM_NAME}\" == \"ipados\" ]; then\n/Applications/Xcode.app/Contents/Developer/iphoneentitlements/gen_entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi\n# This shell script simply copies resources into their respective locations\nditto \"$PROJECT_DIR/$PROJECT_NAME/media/\" \"$BUILT_PRODUCTS_DIR/OGame.app/media/\"\nditto $PROJECT_DIR/$PROJECT_NAME/*.cfg \"$BUILT_PRODUCTS_DIR/OGame.app/\"\n\n";
+			shellScript = "\n# This shell script simply copies resources into their respective locations\nditto \"$PROJECT_DIR/$PROJECT_NAME/media/\" \"$BUILT_PRODUCTS_DIR/OGame.app/media/\"\nditto $PROJECT_DIR/$PROJECT_NAME/*.cfg \"$BUILT_PRODUCTS_DIR/OGame.app/\"\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1735,24 +1735,12 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = No;
 				GCC_THUMB_SUPPORT = "";
-				HEADER_SEARCH_PATHS = (
-					"\"$(PROJECT_NAME)/libs/cocos2dx/kazmath/include\"",
-					"\"$(PROJECT_NAME)/libs/cocos2dx\"",
-					"\"$(PROJECT_NAME)/libs/CocosDenshion/include\"",
-					"\"$(SDKROOT)/usr/include/libxml2\"",
-					"\"$(PROJECT_NAME)/libs/cocos2dx/include\"",
-					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/ios\"",
-					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/third_party/ios\"",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "OGame/OGame-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"\"$(OGRE_SDK_ROOT)/lib/Release\"",
-					"\"$(OGRE_SDK_ROOT)/iOSDependencies/lib/release\"",
-					"\"$(OGRE_SDK_ROOT)/iOSDependencies/lib\"",
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "B87D427E-D3EF-48E8-97C9-35ABD669E90F";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1778,24 +1766,12 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = No;
 				GCC_THUMB_SUPPORT = "";
-				HEADER_SEARCH_PATHS = (
-					"\"$(PROJECT_NAME)/libs/cocos2dx/kazmath/include\"",
-					"\"$(PROJECT_NAME)/libs/cocos2dx\"",
-					"\"$(PROJECT_NAME)/libs/CocosDenshion/include\"",
-					"\"$(SDKROOT)/usr/include/libxml2\"",
-					"\"$(PROJECT_NAME)/libs/cocos2dx/include\"",
-					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/ios\"",
-					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/third_party/ios\"",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "OGame/OGame-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"\"$(OGRE_SDK_ROOT)/lib/Release\"",
-					"\"$(OGRE_SDK_ROOT)/iOSDependencies/lib/release\"",
-					"\"$(OGRE_SDK_ROOT)/iOSDependencies/lib\"",
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "B87D427E-D3EF-48E8-97C9-35ABD669E90F";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1806,46 +1782,34 @@
 		0498301A175F00620065204E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zhu Fengfan (PMJ24TFX94)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Zhu Fengfan (PMJ24TFX94)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/lib\"",
+					"\"$(SRCROOT)/sdk/lib/debug\"",
 				);
 				GCC_PREFIX_HEADER = "OGame/OGame-Prefix.h";
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE\"",
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE/RenderSystems/GLES2\"",
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE/RTShaderSystem\"",
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE/iOS\"",
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include\"",
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OIS\"",
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE/Plugins/ParticleFX\"",
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/iOSDependencies/include\"",
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE/Terrain\"",
-					"\"$(SDKROOT)/usr/include/libxml2\"",
 					"\"$(PROJECT_NAME)/Bullet/src\"",
 					"\"$(PROJECT_NAME)/Bullet/src/LinearMath\"",
-					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OGRE\"",
-					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OGRE/RenderSystems/GLES2\"",
-					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OGRE/RTShaderSystem\"",
-					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OGRE/iOS\"",
-					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include\"",
-					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OIS\"",
-					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OGRE/Plugins/ParticleFX\"",
-					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/iOSDependencies/include\"",
+					"\"$(SRCROOT)/sdk/include\"",
+					"\"$(SRCROOT)/sdk/include/OGRE\"",
+					"\"$(SRCROOT)/sdk/include/OIS\"",
+					"\"$(SRCROOT)/sdk/include/OGRE/IOS\"",
+					"\"$(SRCROOT)/sdk/include/OGRE/RTShaderSystem\"",
+					"\"$(SRCROOT)/sdk/include/OGRE/RenderSystems/GLES2\"",
+					"\"$(SRCROOT)/sdk/include/OGRE/Plugins/ParticleFX\"",
+					"\"$(SRCROOT)/sdk/iosDepedencies/include\"",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/lib/debug\"",
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/iOSDependencies/lib\"",
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/iOSDependencies/lib/debug\"",
-					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/lib/debug\"",
-					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/iOSDependencies/lib\"",
-					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/iOSDependencies/lib/debug\"",
+					"\"$(SRCROOT)/sdk/lib/debug\"",
+					"\"$(SRCROOT)/sdk/iOSDependencies/lib/debug\"",
+					"\"$(SRCROOT)/sdk/lib\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DOGRE_USE_GLES2=1";
 				OTHER_LDFLAGS = (
 					"-lOgreMainStatic",
@@ -1872,46 +1836,34 @@
 		0498301B175F00620065204E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zhu Fengfan (PMJ24TFX94)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Zhu Fengfan (PMJ24TFX94)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/lib\"",
+					"\"$(SRCROOT)/sdk/lib/release\"",
 				);
 				GCC_PREFIX_HEADER = "OGame/OGame-Prefix.h";
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE\"",
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE/RenderSystems/GLES2\"",
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE/RTShaderSystem\"",
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE/iOS\"",
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include\"",
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OIS\"",
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE/Plugins/ParticleFX\"",
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/iOSDependencies/include\"",
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/include/OGRE/Terrain\"",
-					"\"$(SDKROOT)/usr/include/libxml2\"",
 					"\"$(PROJECT_NAME)/Bullet/src\"",
 					"\"$(PROJECT_NAME)/Bullet/src/LinearMath\"",
-					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OGRE\"",
-					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OGRE/RenderSystems/GLES2\"",
-					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OGRE/RTShaderSystem\"",
-					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OGRE/iOS\"",
-					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include\"",
-					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OIS\"",
-					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/include/OGRE/Plugins/ParticleFX\"",
-					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/iOSDependencies/include\"",
+					"\"$(SRCROOT)/sdk/include\"",
+					"\"$(SRCROOT)/sdk/include/OGRE\"",
+					"\"$(SRCROOT)/sdk/include/OIS\"",
+					"\"$(SRCROOT)/sdk/include/OGRE/IOS\"",
+					"\"$(SRCROOT)/sdk/include/OGRE/RTShaderSystem\"",
+					"\"$(SRCROOT)/sdk/include/OGRE/RenderSystems/GLES2\"",
+					"\"$(SRCROOT)/sdk/include/OGRE/Plugins/ParticleFX\"",
+					"\"$(SRCROOT)/sdk/iosDepedencies/include\"",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/iOSDependencies/lib\"",
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/lib/release\"",
-					"\"/Users/mac/Documents/Engin/Ogre/ogre_src_v1-8-1/buildios/IOS_SDK/iOSDependencies/lib/release\"",
-					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/iOSDependencies/lib\"",
-					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/lib/release\"",
-					"\"/Users/liuyunxiao/ogre/build_ios/IOS_SDK/iOSDependencies/lib/release\"",
+					"\"$(SRCROOT)/sdk/lib/release\"",
+					"\"$(SRCROOT)/sdk/iOSDependencies/lib/release\"",
+					"\"$(SRCROOT)/sdk/lib\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DOGRE_USE_GLES2=1";
 				OTHER_LDFLAGS = (
 					"-lOgreMainStatic",
