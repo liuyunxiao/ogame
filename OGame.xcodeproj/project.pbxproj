@@ -174,6 +174,19 @@
 		49A406061776202600418A68 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A406041776202600418A68 /* MainView.xib */; };
 		49A406071776202600418A68 /* PlayerControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A406051776202600418A68 /* PlayerControlView.xib */; };
 		49A4060A177620FF00418A68 /* spotlight_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A40609177620FF00418A68 /* spotlight_image.png */; };
+		E4BD9CA51813A60E006727C3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BD9C981813A60D006727C3 /* Default-568h@2x.png */; };
+		E4BD9CA61813A60E006727C3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BD9C991813A60D006727C3 /* Default.png */; };
+		E4BD9CA71813A60E006727C3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BD9C9A1813A60D006727C3 /* Default@2x.png */; };
+		E4BD9CA81813A60E006727C3 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BD9C9B1813A60D006727C3 /* Icon-72.png */; };
+		E4BD9CA91813A60E006727C3 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BD9C9C1813A60D006727C3 /* Icon-76.png */; };
+		E4BD9CAA1813A60E006727C3 /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BD9C9D1813A60D006727C3 /* Icon-120.png */; };
+		E4BD9CAB1813A60E006727C3 /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BD9C9E1813A60D006727C3 /* Icon-144.png */; };
+		E4BD9CAC1813A60E006727C3 /* Icon-152.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BD9C9F1813A60D006727C3 /* Icon-152.png */; };
+		E4BD9CAD1813A60E006727C3 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BD9CA01813A60E006727C3 /* Icon-Small-50.png */; };
+		E4BD9CAE1813A60E006727C3 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BD9CA11813A60E006727C3 /* Icon-Small.png */; };
+		E4BD9CAF1813A60E006727C3 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BD9CA21813A60E006727C3 /* Icon-Small@2x.png */; };
+		E4BD9CB01813A60E006727C3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BD9CA31813A60E006727C3 /* Icon.png */; };
+		E4BD9CB11813A60E006727C3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BD9CA41813A60E006727C3 /* Icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -639,6 +652,19 @@
 		49A406041776202600418A68 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		49A406051776202600418A68 /* PlayerControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerControlView.xib; sourceTree = "<group>"; };
 		49A40609177620FF00418A68 /* spotlight_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spotlight_image.png; sourceTree = "<group>"; };
+		E4BD9C981813A60D006727C3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
+		E4BD9C991813A60D006727C3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
+		E4BD9C9A1813A60D006727C3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
+		E4BD9C9B1813A60D006727C3 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Resources/Icon-72.png"; sourceTree = "<group>"; };
+		E4BD9C9C1813A60D006727C3 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-76.png"; path = "Resources/Icon-76.png"; sourceTree = "<group>"; };
+		E4BD9C9D1813A60D006727C3 /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-120.png"; path = "Resources/Icon-120.png"; sourceTree = "<group>"; };
+		E4BD9C9E1813A60D006727C3 /* Icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-144.png"; path = "Resources/Icon-144.png"; sourceTree = "<group>"; };
+		E4BD9C9F1813A60D006727C3 /* Icon-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-152.png"; path = "Resources/Icon-152.png"; sourceTree = "<group>"; };
+		E4BD9CA01813A60E006727C3 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Resources/Icon-Small-50.png"; sourceTree = "<group>"; };
+		E4BD9CA11813A60E006727C3 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Resources/Icon-Small.png"; sourceTree = "<group>"; };
+		E4BD9CA21813A60E006727C3 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "Resources/Icon-Small@2x.png"; sourceTree = "<group>"; };
+		E4BD9CA31813A60E006727C3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = "<group>"; };
+		E4BD9CA41813A60E006727C3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resources/Icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -811,6 +837,19 @@
 		04982FCC175F00620065204E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E4BD9C981813A60D006727C3 /* Default-568h@2x.png */,
+				E4BD9C991813A60D006727C3 /* Default.png */,
+				E4BD9C9A1813A60D006727C3 /* Default@2x.png */,
+				E4BD9C9B1813A60D006727C3 /* Icon-72.png */,
+				E4BD9C9C1813A60D006727C3 /* Icon-76.png */,
+				E4BD9C9D1813A60D006727C3 /* Icon-120.png */,
+				E4BD9C9E1813A60D006727C3 /* Icon-144.png */,
+				E4BD9C9F1813A60D006727C3 /* Icon-152.png */,
+				E4BD9CA01813A60E006727C3 /* Icon-Small-50.png */,
+				E4BD9CA11813A60E006727C3 /* Icon-Small.png */,
+				E4BD9CA21813A60E006727C3 /* Icon-Small@2x.png */,
+				E4BD9CA31813A60E006727C3 /* Icon.png */,
+				E4BD9CA41813A60E006727C3 /* Icon@2x.png */,
 				49A406031776202600418A68 /* Resources */,
 				0484C8971773F7990066C862 /* Default-568h@2x.png */,
 				04983011175F00620065204E /* ogre.cfg */,
@@ -1515,19 +1554,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4BD9CB01813A60E006727C3 /* Icon.png in Resources */,
 				04982FC0175F00600065204E /* InfoPlist.strings in Resources */,
 				04983012175F00620065204E /* ogre.cfg in Resources */,
 				04983014175F00620065204E /* plugins.cfg in Resources */,
+				E4BD9CAE1813A60E006727C3 /* Icon-Small.png in Resources */,
 				04983016175F00620065204E /* resources.cfg in Resources */,
+				E4BD9CAF1813A60E006727C3 /* Icon-Small@2x.png in Resources */,
 				0496082817604F3C00FE626B /* MainView.xib in Resources */,
 				0498F6801762D5BF00C3CC8A /* LICENSE in Resources */,
+				E4BD9CB11813A60E006727C3 /* Icon@2x.png in Resources */,
 				0498F6FB1762D5C000C3CC8A /* VERSION in Resources */,
+				E4BD9CAA1813A60E006727C3 /* Icon-120.png in Resources */,
+				E4BD9CA61813A60E006727C3 /* Default.png in Resources */,
 				0484C8981773F7990066C862 /* Default-568h@2x.png in Resources */,
 				49A406061776202600418A68 /* MainView.xib in Resources */,
 				49A406071776202600418A68 /* PlayerControlView.xib in Resources */,
+				E4BD9CAC1813A60E006727C3 /* Icon-152.png in Resources */,
 				49A4060A177620FF00418A68 /* spotlight_image.png in Resources */,
+				E4BD9CA81813A60E006727C3 /* Icon-72.png in Resources */,
+				E4BD9CA71813A60E006727C3 /* Default@2x.png in Resources */,
 				493C299D17770012004DB81D /* btn_archor@2x.png in Resources */,
 				493C29A017770327004DB81D /* bg_archor_circle@2x.png in Resources */,
+				E4BD9CA51813A60E006727C3 /* Default-568h@2x.png in Resources */,
+				E4BD9CAB1813A60E006727C3 /* Icon-144.png in Resources */,
+				E4BD9CA91813A60E006727C3 /* Icon-76.png in Resources */,
+				E4BD9CAD1813A60E006727C3 /* Icon-Small-50.png in Resources */,
 				041FA9E8177A830C00A976D5 /* TextureUsageAgreement.txt in Resources */,
 				04EFA07D17C5FBFA00667CB3 /* GameMain.xib in Resources */,
 			);
