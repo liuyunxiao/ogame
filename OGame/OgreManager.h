@@ -44,7 +44,7 @@
 #  include "OgreStaticPluginLoader.h"
 #endif
 
-#include "Ogre.h"
+//ß#include "Ogre.h"
 
 //|||||||||||||||||||||||||||||||||||||||||||||||
 
