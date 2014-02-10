@@ -1268,6 +1268,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
+				TargetAttributes = {
+					04982FAC175F00600065204E = {
+						DevelopmentTeam = 4H363RML45;
+					};
+				};
 			};
 			buildConfigurationList = 04982FA7175F00600065204E /* Build configuration list for PBXProject "OGame" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1610,6 +1615,7 @@
 					"-lPlugin_ParticleFXStatic",
 					"-lOgreTerrainStatic",
 				);
+				PROVISIONING_PROFILE = "9DDDE47F-8ABB-4198-8394-C62A63CF1E69";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1664,6 +1670,7 @@
 					"-lPlugin_ParticleFXStatic",
 					"-lOgreTerrainStatic",
 				);
+				PROVISIONING_PROFILE = "9DDDE47F-8ABB-4198-8394-C62A63CF1E69";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

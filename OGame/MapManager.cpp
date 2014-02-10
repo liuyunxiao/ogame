@@ -47,6 +47,11 @@ bool MapMgr::EnterMap(String name)
     SceneNode* floorNode = g_pSceneMgrPtr->getRootSceneNode()->createChildSceneNode(Vector3(0.0, 0.0, 0.0));
     floorNode->attachObject(floor);
     
+    Entity* tt = g_pSceneMgrPtr->createEntity("fsf", "jj.mesh");
+    SceneNode* mm = g_pSceneMgrPtr->getRootSceneNode()->createChildSceneNode();
+    mm->attachObject(tt);
+    mm->scale(0.2, 0.2, 0.2);
+    
     btTransform groundTransform;
     groundTransform.setIdentity();
     groundTransform.setOrigin(btVector3(0,-0.05,0));

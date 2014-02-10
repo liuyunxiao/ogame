@@ -1,0 +1,40 @@
+
+material 1
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.74902 0.74902 0.74902 1
+			diffuse 0.74902 0.74902 0.74902 1
+			specular 0.898039 0.898039 0.898039 1 12.8
+
+			texture_unit
+			{
+				texture Bandersha_512.jpg -1
+			}
+		}
+
+	}
+
+}
+
+material 03 - Default
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.588235 0.588235 0.588235 1
+			diffuse 0.588235 0.588235 0.588235 1
+			specular 0.898039 0.898039 0.898039 1 12.8
+
+			texture_unit
+			{
+				texture Bandersha_512.jpg -1
+			}
+		}
+
+	}
+
+}
